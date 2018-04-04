@@ -5,18 +5,23 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 const A = styled.a`
   color: ${props => props.color}
+  padding: 5px;
 
+  min-width: 35px;
+  min-height: 35px;
   &:hover {
     color: ${props => props.hoverColor};
   }
 `
 
 const Icon = ({
-  color = "white",
+  color = "#757575",
+  customClass = "",
   icon,
   hoverColor = "white",
   href,
-  size = "lg",
+  pulse = false,
+  size = "2x",
   spin = false,
 }) => (
   <A 
@@ -26,8 +31,11 @@ const Icon = ({
     target="_blank" 
   >
     <FontAwesomeIcon
-      className={cs({ [`fa-${size}`]: true, 'fa-spin': spin })}
+      className={customClass}
       icon={icon}
+      pulse={pulse}
+      size={size}
+      spin={spin}
     />
   </A>
 )

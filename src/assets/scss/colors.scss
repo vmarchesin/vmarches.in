@@ -2,11 +2,21 @@ $bgColor: #f2f2f2;
 
 $brandPrimary: #003366;
 
+$facebook: #3b5998;
 $github: #212529;
+$linkedin: #0077b5;
+$telegram: #0088cc;
+$twitter: #1DA1F2;
+$whatsapp: #25d366;
 
 :export {
   bgColor: $bgColor;
   primary: $brandPrimary;
 
+  facebook: $facebook;
   github: $github;
+  linkedin: $linkedin;
+  telegram: $telegram;
+  twitter: $twitter;
+  whatsapp: $whatsapp;
 }

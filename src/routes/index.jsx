@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { hot } from 'react-hot-loader'
 
+import Home from 'routes/Home'
 import Footer from "components/Footer"
 import GithubCorner from "components/GithubCorner"
 
@@ -26,7 +27,7 @@ const App = () => (
   <Flex>
     <GithubCorner />
     <main>
-      <div>My React App</div>
+      <Home />
     </main>
     <Footer />
   </Flex>
