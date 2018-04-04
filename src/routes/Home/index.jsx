@@ -31,7 +31,7 @@ const Route = () => (
       </Col>
       <Col xs="12">
         <center>
-          Frontend Developer
+          Frontend Developer <a href="https://arquivei.com.br" target="_blank">@Arquivei</a>
         </center>
       </Col>
     </Row>

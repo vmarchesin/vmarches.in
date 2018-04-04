@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { hot } from 'react-hot-loader'
+import { browserHistory, BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Home from 'routes/Home'
 import Footer from "components/Footer"
@@ -25,12 +26,20 @@ const Flex = styled.div`
   }
 `
 
+const Main = () => (
+  <main>
+    <Home />
+  </main>
+)
+
 const App = () => (
   <Flex>
     <GithubCorner />
-    <main>
-      <Home />
-    </main>
+    <BrowserRouter history={browserHistory}>
+      <Switch>
+        <Route exact path='/' component={Main} />
+      </Switch>
+    </BrowserRouter>
     <Footer />
   </Flex>
 )
