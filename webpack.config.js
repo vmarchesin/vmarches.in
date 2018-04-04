@@ -3,36 +3,40 @@ const path = require('path')
 
 module.exports = {
   entry: [
-    './src/index.js'
+    './src/index.js',
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-      }
-    ]
+        use: [ 'style-loader', 'css-loader' ],
+      },
+    ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    alias: {
+      components: path.resolve(__dirname, 'src/components'),
+      routes: path.resolve(__dirname, 'src/routes'),
+    },
+    extensions: ['*', '.js', '.jsx'],
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/index.html'
-    })
+      template: 'src/index.html',
+    }),
   ],
 }
