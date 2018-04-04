@@ -21,14 +21,20 @@ module.exports = {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ],
       },
+      {
+        test: /\.scss$/,
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ],
+      },
     ],
   },
   resolve: {
     alias: {
       components: path.resolve(__dirname, 'src/components'),
+      images: path.resolve(__dirname, 'src/images'),
       routes: path.resolve(__dirname, 'src/routes'),
+      scss: path.resolve(__dirname, 'src/assets/scss'),
     },
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.scss'],
   },
   devServer: {
     contentBase: './dist',
