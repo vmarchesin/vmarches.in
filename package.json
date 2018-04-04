@@ -12,7 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/vmarchesin/vmarches.in.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "portfolio"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
