@@ -7,7 +7,7 @@ import colors from "scss/colors"
 const Footer = styled.footer`
   background-color: ${colors.primary};
   color: white;
-  min-height: 100px;
+  min-height: 50px;
 `
 const Component = () => (
   <Footer>

@@ -40,6 +40,7 @@ module.exports = {
       images: path.resolve(__dirname, 'src/assets/images'),
       routes: path.resolve(__dirname, 'src/routes'),
       scss: path.resolve(__dirname, 'src/assets/scss'),
+      utils: path.resolve(__dirname, 'src/utils'),
     },
     extensions: ['*', '.js', '.jsx', '.scss'],
     modules: [path.resolve(__dirname, 'node_modules'), 'node_modules'],
