@@ -6,12 +6,13 @@ import Home from 'routes/Home'
 import Footer from "components/Footer"
 import GithubCorner from "components/GithubCorner"
 
+import fonts from "scss/fonts"
 import colors from "scss/colors"
 
 const Flex = styled.div`
   background-color: ${colors.bgColor};
   display: flex;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'HK Nova Medium Narrow', 'Roboto', sans-serif;
   min-height: 100vh;
   flex-direction: column;
 

@@ -9,15 +9,35 @@ const Footer = styled.footer`
   color: white;
   min-height: 50px;
 `
+
+const Bottom = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  > span {
+    padding: 5px;
+  }
+`
+
 const Component = () => (
   <Footer>
     <div className="container">
-      <Row className="justify-content-md-center">
-        <Col xs="12">
-          <small>
-            Vinicius Marchesin Araujo, Todos os direitos reservados
-          </small>
-        </Col>
+      <Row className="justify-content-between">
+        <Bottom xs="12" md="8">
+          <span>
+            <div>
+              <small>
+                Copyright © {new Date().getFullYear()} 
+              </small>
+            </div>
+            <div>
+              <small>
+              Vinicius Marchesin Araujo, Todos os direitos reservados
+              </small>
+            </div>
+          </span>
+        </Bottom>
       </Row>
     </div>
   </Footer>
