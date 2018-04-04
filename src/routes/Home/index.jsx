@@ -18,9 +18,14 @@ const Route = () => (
       icon={["fab", "github"]} 
     />
     <FontAwesome
-      hoverColor={colors.telegram} 
-      href="@vmarchesin" 
-      icon={["fab", "telegram-plane"]} 
+      hoverColor={colors.linkedin} 
+      href="https://www.linkedin.com/in/vinicius-araujo-238a9b96/" 
+      icon={["fab", "linkedin-in"]} 
+    />
+    <FontAwesome
+      hoverColor={colors.github} 
+      href="mailto:contact@vmarches.in" 
+      icon={["fas", "at"]} 
     />
   </React.Fragment>
 )

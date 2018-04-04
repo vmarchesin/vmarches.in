@@ -11,6 +11,7 @@ import colors from "scss/colors"
 const Flex = styled.div`
   background-color: ${colors.bgColor};
   display: flex;
+  font-family: 'Roboto', sans-serif;
   min-height: 100vh;
   flex-direction: column;
 
