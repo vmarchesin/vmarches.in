@@ -1,7 +1,7 @@
 import React from 'react'
 import colors from "scss/colors"
 
-const Icon = () => (
+const Component = () => (
   <React.Fragment>
     <a 
       aria-label="View source on Github"
@@ -56,4 +56,4 @@ const Icon = () => (
   </React.Fragment>
 )
 
-export default Icon
+export default Component

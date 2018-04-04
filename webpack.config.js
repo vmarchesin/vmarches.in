@@ -25,16 +25,24 @@ module.exports = {
         test: /\.scss$/,
         use: [ 'style-loader', 'css-loader', 'sass-loader' ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        include: [
+          path.resolve(__dirname, 'src/assets')
+        ],
+        use: [ 'file-loader' ],
+      }
     ],
   },
   resolve: {
     alias: {
       components: path.resolve(__dirname, 'src/components'),
-      images: path.resolve(__dirname, 'src/images'),
+      images: path.resolve(__dirname, 'src/assets/images'),
       routes: path.resolve(__dirname, 'src/routes'),
       scss: path.resolve(__dirname, 'src/assets/scss'),
     },
     extensions: ['*', '.js', '.jsx', '.scss'],
+    modules: [path.resolve(__dirname, 'node_modules'), 'node_modules'],
   },
   devServer: {
     contentBase: './dist',

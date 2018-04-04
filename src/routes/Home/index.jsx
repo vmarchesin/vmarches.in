@@ -1,12 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Col, Row } from "reactstrap"
 
+import { RoundImage } from "components/Image"
 import FontAwesome from "components/FontAwesome"
 
+import Profile from "images/profile.jpeg"
 import colors from "scss/colors"
 
+const Container = styled.div`
+
+`
+
 const Route = () => (
-  <React.Fragment>
+  <Container className="container">
+    <Row>
+      <RoundImage src={Profile}/>
+    </Row>
+    <Row>
     <FontAwesome
       hoverColor={colors.facebook} 
       href="https://www.facebook.com/vini.marchesin" 
@@ -27,7 +38,8 @@ const Route = () => (
       href="mailto:contact@vmarches.in" 
       icon={["fas", "at"]} 
     />
-  </React.Fragment>
+    </Row>
+  </Container>
 )
 
 export default Route

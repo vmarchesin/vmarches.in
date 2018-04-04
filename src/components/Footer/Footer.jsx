@@ -2,14 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { Col, Row } from "reactstrap"
 
-
-import dimensions from "scss/dimensions"
 import colors from "scss/colors"
 
 const Footer = styled.footer`
   background-color: ${colors.primary};
   color: white;
-  min-height: ${dimensions.footerMinHeight};
+  min-height: 100px;
 `
 const Component = () => (
   <Footer>

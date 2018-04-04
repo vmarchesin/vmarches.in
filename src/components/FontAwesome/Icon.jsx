@@ -116,7 +116,7 @@ const A = styled.a`
   }
 `
 
-const Icon = ({
+const Component = ({
   color = "#757575",
   customClass = "",
   icon,
@@ -142,4 +142,4 @@ const Icon = ({
   </A>
 )
 
-export default Icon
+export default Component
