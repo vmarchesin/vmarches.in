@@ -1,0 +1,25 @@
+{
+  "name": "vmarches.in",
+  "version": "1.0.0",
+  "description": "My personal webpage and portfolio.",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmarchesin/vmarches.in.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vmarchesin/vmarches.in/issues"
+  },
+  "homepage": "https://github.com/vmarchesin/vmarches.in#readme",
+  "devDependencies": {
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
+  }
+}
