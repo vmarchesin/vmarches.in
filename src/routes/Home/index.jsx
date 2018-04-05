@@ -10,10 +10,10 @@ import Profile from "images/profile.jpeg"
 import colors from "scss/colors"
 import { URLS } from "utils/constants"
 
-const Next = styled(Link)`
-  position: absolute;
-  top: 50%;
-  left: 80%;
+const CenterCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const wrapAnchor = (href, children) =>(
@@ -34,14 +34,11 @@ const Route = () => (
     <Row>
       <Col xs="12">
         <center>
-          <RoundImage src={Profile}/>
-          <Next to="/projects">
-            <FontAwesome 
-              customClass="hvr-wobble-horizontal" 
-              hoverColor={colors.primary}
-              icon={["fas", "chevron-circle-right"]} 
-            />
-          </Next>
+          <Row>
+            <Col xs="12">
+              <RoundImage src={Profile}/>
+            </Col>
+          </Row>
         </center>
       </Col>
       <Col xs="12" className="mt10">
