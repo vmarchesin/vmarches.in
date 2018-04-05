@@ -1,4 +1,6 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -19,7 +21,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        }),
+        // use: [ 'style-loader', 'css-loader' ],
       },
       {
         test: /\.scss$/,
@@ -55,9 +61,11 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html',
     }),
+    new ExtractTextPlugin('styles.css'),
   ],
 }

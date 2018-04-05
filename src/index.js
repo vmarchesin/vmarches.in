@@ -16,6 +16,7 @@ import App from 'routes'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'scss/animations'
 import 'scss/layout'
+import 'scss/fonts'
 
 fontawesome.library.add(
   faAt, 
