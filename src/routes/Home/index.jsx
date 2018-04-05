@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Col, Row } from "reactstrap"
+import { Link } from 'react-router-dom'
 
 import { RoundImage } from "components/Image"
 import FontAwesome from "components/FontAwesome"
@@ -9,46 +10,60 @@ import Profile from "images/profile.jpeg"
 import colors from "scss/colors"
 import { URLS } from "utils/constants"
 
-const Container = styled.div`
+const Next = styled(Link)`
+  position: absolute;
+  top: 50%;
+  left: 80%;
 `
 
-const createIcon = ({ color, href, icon }, key) => (
+const wrapAnchor = (href, children) =>(
+  <a href={href} target="_blank">
+    {children}
+  </a>
+)
+
+const createIcon = (props, key) => (
   <FontAwesome
-    hoverColor={color} 
-    href={href}
     key={key}
-    icon={icon} 
+    {...props}
   />
 )
 
 const Route = () => (
-  <Container>
+  <div>
     <Row>
       <Col xs="12">
         <center>
           <RoundImage src={Profile}/>
+          <Next to="/projects">
+            <FontAwesome 
+              customClass="hvr-wobble-horizontal" 
+              hoverColor={colors.primary}
+              icon={["fas", "chevron-circle-right"]} 
+            />
+          </Next>
         </center>
       </Col>
-      <Col xs="12">
+      <Col xs="12" className="mt10">
         <center>
-          Frontend Developer <a href="https://arquivei.com.br" target="_blank">@Arquivei</a>
+          Frontend Developer <a href={URLS.arquivei} target="_blank">@Arquivei</a>
         </center>
       </Col>
     </Row>
-    <Row>
+    <Row className="mt10">
       <Col xs="12">
         <center>
           {[
-            { color: colors.github, href: URLS.github , icon: ["fab", "github"] },
-            { color: colors.linkedin, href: URLS.linkedin , icon: ["fab", "linkedin-in"] },
-            { color: colors.github, href: URLS.mail , icon: ["fas", "at"] },
-            { color: colors.facebook, href: URLS.facebook , icon: ["fab", "facebook-f"] },
-            { color: colors.telegram, href: URLS.telegram, icon: ["fab", "telegram-plane"]},
-          ].map((i, index) => createIcon(i, index))}
+            { customClass: "hvr-buzz-out", icon: ["fab", "github"], hoverColor: colors.github, href: URLS.github },
+            { customClass: "hvr-buzz-out", icon: ["fab", "linkedin-in"], hoverColor: colors.linkedin, href: URLS.linkedin },
+            { customClass: "hvr-buzz-out", icon: ["fas", "at"], hoverColor: colors.github, href: URLS.mail },
+            { customClass: "hvr-buzz-out", icon: ["fab", "facebook-f"], hoverColor: colors.facebook, href: URLS.facebook },
+            { customClass: "hvr-buzz-out", icon: ["fab", "telegram-plane"], hoverColor: colors.telegram, href: URLS.telegram },
+          ].map((i, index) => wrapAnchor(i.href, createIcon(i, index)))}
         </center>
       </Col>
     </Row>
-  </Container>
+  </div>
 )
 
 export default Route

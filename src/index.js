@@ -2,18 +2,30 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import fontawesome from '@fortawesome/fontawesome'
-import faAt from '@fortawesome/fontawesome-free-solid/faAt'
-import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebookF'
-import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
-import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedinIn'
-import faTelegram from '@fortawesome/fontawesome-free-brands/faTelegramPlane'
-import faWhatsapp from '@fortawesome/fontawesome-free-brands/faWhatsapp'
+import { faAt, faChevronCircleRight } from '@fortawesome/fontawesome-free-solid'
+import {
+  faFacebookF,
+  faGithub,
+  faLinkedinIn,
+  faTelegram,
+  faWhatsapp,
+} from '@fortawesome/fontawesome-free-brands'
 
 import App from 'routes'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'scss/animations'
+import 'scss/layout'
 
-fontawesome.library.add(faAt, faFacebook, faGithub, faLinkedin, faTelegram, faWhatsapp)
+fontawesome.library.add(
+  faAt, 
+  faChevronCircleRight, 
+  faFacebookF, 
+  faGithub, 
+  faLinkedinIn, 
+  faTelegram, 
+  faWhatsapp
+)
 
 ReactDOM.render(
   <App/>,
