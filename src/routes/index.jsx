@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { hot } from 'react-hot-loader'
-import { browserHistory, BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import Home from 'routes/Home'
 import Projects from 'routes/Projects'
@@ -10,6 +10,7 @@ import Footer from 'components/Footer'
 import GithubCorner from 'components/GithubCorner'
 
 import colors from 'scss/colors'
+import { wrapMain } from 'utils'
 
 const Flex = styled.div`
   background-color: ${colors.bgColor};
@@ -27,20 +28,16 @@ const Flex = styled.div`
   }
 `
 
-const main = children => <main>{children}</main>
-
-const HomeRoute = () => main(<Home />)
-const ProjectsRoute = () => main(<Projects />)
+const HomeRoute = () => wrapMain(<Home />)
+const ProjectsRoute = () => wrapMain(<Projects />)
 
 const App = () => (
   <Flex>
     <GithubCorner />
-    <BrowserRouter history={browserHistory}>
-      <Switch>
-        <Route exact path='/' component={HomeRoute} />
-        <Route exact path='/projects' component={ProjectsRoute} />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route exact path='/' component={HomeRoute} />
+      <Route exact path='/projects' component={ProjectsRoute} />
+    </Switch>
     <Footer />
   </Flex>
 )

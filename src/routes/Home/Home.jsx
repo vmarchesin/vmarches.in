@@ -9,6 +9,7 @@ import FontAwesome from "components/FontAwesome"
 import Profile from "images/profile.jpeg"
 import colors from "scss/colors"
 import { URLS } from "utils/constants"
+import { createIcon, wrapAnchor } from 'utils'
 
 const CenterCol = styled(Col)`
   display: flex;
@@ -16,38 +17,24 @@ const CenterCol = styled(Col)`
   justify-content: center;
 `
 
-const wrapAnchor = (href, children) =>(
-  <a href={href} target="_blank">
-    {children}
-  </a>
-)
-
-const createIcon = (props, key) => (
-  <FontAwesome
-    key={key}
-    {...props}
-  />
-)
-
-const Route = () => (
+const HomeRoute = () => (
   <div>
     <Row>
       <Col xs="12">
         <center>
           <Row>
-            <CenterCol xs="2">
-              <Link to="/">
-                <FontAwesome 
-                  customClass="hvr-wobble-horizontal" 
-                  hoverColor={colors.primary}
-                  icon={["fas", "chevron-circle-left"]} 
-                />
-              </Link>
-            </CenterCol>
-            <Col xs="8">
+            <Col xs={{ size: 8, offset: 2 }}>
               <RoundImage src={Profile}/>
             </Col>
-            <Col xs="2"></Col>
+            <CenterCol xs="2">
+              <Link to="/projects">
+                {createIcon({
+                  customClass: "hvr-wobble-horizontal",
+                  hoverColor: colors.primary,
+                  icon: ["fas", "chevron-circle-right"],
+                })}
+              </Link>
+            </CenterCol>
           </Row>
         </center>
       </Col>
@@ -66,11 +53,11 @@ const Route = () => (
             { customClass: "hvr-buzz-out", icon: ["fas", "at"], hoverColor: colors.github, href: URLS.mail },
             { customClass: "hvr-buzz-out", icon: ["fab", "facebook-f"], hoverColor: colors.facebook, href: URLS.facebook },
             { customClass: "hvr-buzz-out", icon: ["fab", "telegram-plane"], hoverColor: colors.telegram, href: URLS.telegram },
-          ].map((i, index) => wrapAnchor(i.href, createIcon(i, index)))}
+          ].map((i, index) => wrapAnchor(i.href, createIcon(i), index))}
         </center>
       </Col>
     </Row>
   </div>
 )
 
-export default Route
+export default HomeRoute

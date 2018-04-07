@@ -5,7 +5,7 @@ const path = require('path')
 
 module.exports = {
   entry: [
-    './src/index.js',
+    './src/app.js',
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -51,6 +51,7 @@ module.exports = {
       fonts: path.resolve(__dirname, 'src/assets/fonts'),
       routes: path.resolve(__dirname, 'src/routes'),
       scss: path.resolve(__dirname, 'src/assets/scss'),
+      tools: path.resolve(__dirname, 'src/tools'),
       utils: path.resolve(__dirname, 'src/utils'),
     },
     extensions: ['*', '.js', '.jsx', '.scss'],

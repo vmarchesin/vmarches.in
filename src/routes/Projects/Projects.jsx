@@ -4,11 +4,11 @@ import { Col, Row } from "reactstrap"
 import { Link } from 'react-router-dom'
 
 import { RoundImage } from "components/Image"
-import FontAwesome from "components/FontAwesome"
 
 import Profile from "images/profile.jpeg"
 import colors from "scss/colors"
 import { URLS } from "utils/constants"
+import { createIcon, wrapAnchor } from 'utils'
 
 const CenterCol = styled(Col)`
   display: flex;
@@ -16,26 +16,22 @@ const CenterCol = styled(Col)`
   justify-content: center;
 `
 
-const wrapAnchor = (href, children) =>(
-  <a href={href} target="_blank">
-    {children}
-  </a>
-)
-
-const createIcon = (props, key) => (
-  <FontAwesome
-    key={key}
-    {...props}
-  />
-)
-
-const Route = () => (
+const ProjectsRoute = () => (
   <div>
     <Row>
       <Col xs="12">
         <center>
           <Row>
-            <Col xs="12">
+            <CenterCol xs="2">
+              <Link to="/">
+                {createIcon({
+                  customClass: "hvr-wobble-horizontal",
+                  hoverColor: colors.primary,
+                  icon: ["fas", "chevron-circle-left"],
+                })}
+              </Link>
+            </CenterCol>
+            <Col xs="8">
               <RoundImage src={Profile}/>
             </Col>
           </Row>
@@ -63,4 +59,4 @@ const Route = () => (
   </div>
 )
 
-export default Route
+export default ProjectsRoute

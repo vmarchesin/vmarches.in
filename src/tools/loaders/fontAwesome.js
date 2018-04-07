@@ -1,6 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-
 import fontawesome from '@fortawesome/fontawesome'
 import { faAt, faChevronCircleRight } from '@fortawesome/fontawesome-free-solid'
 import {
@@ -11,13 +8,6 @@ import {
   faWhatsapp,
 } from '@fortawesome/fontawesome-free-brands'
 
-import App from 'routes'
-
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'scss/animations'
-import 'scss/layout'
-import 'scss/fonts'
-
 fontawesome.library.add(
   faAt, 
   faChevronCircleRight, 
@@ -26,9 +16,4 @@ fontawesome.library.add(
   faLinkedinIn, 
   faTelegram, 
   faWhatsapp
-)
-
-ReactDOM.render(
-  <App/>,
-  document.getElementById('app')
 )
