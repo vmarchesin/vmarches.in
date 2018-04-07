@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Col, Row } from "reactstrap"
 import { Link } from 'react-router-dom'
+import Typist from 'react-typist'
 
 import { RoundImage } from "components/Image"
 import FontAwesome from "components/FontAwesome"
@@ -11,36 +12,30 @@ import colors from "scss/colors"
 import { URLS } from "utils/constants"
 import { createIcon, wrapAnchor } from 'utils'
 
-const CenterCol = styled(Col)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
 const HomeRoute = () => (
   <div>
     <Row>
       <Col xs="12">
         <center>
           <Row>
-            <Col xs={{ size: 8, offset: 2 }}>
+            <Col xs="12">
               <RoundImage src={Profile}/>
             </Col>
-            <CenterCol xs="2">
-              <Link to="/projects">
-                {createIcon({
-                  customClass: "hvr-wobble-horizontal",
-                  hoverColor: colors.primary,
-                  icon: ["fas", "chevron-circle-right"],
-                })}
-              </Link>
-            </CenterCol>
           </Row>
         </center>
       </Col>
       <Col xs="12" className="mt10">
         <center>
-          Frontend Developer <a href={URLS.arquivei} target="_blank">@Arquivei</a>
+          <Typist
+            cursor={{
+              show: true,
+              blink: true,
+              element: '_',
+            }}
+            startDelay={1000}
+          >
+            Frontend Developer <a href={URLS.arquivei} target="_blank">@Arquivei</a>
+          </Typist>
         </center>
       </Col>
     </Row>

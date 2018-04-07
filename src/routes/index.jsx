@@ -8,6 +8,7 @@ import Projects from 'routes/Projects'
 
 import Footer from 'components/Footer'
 import GithubCorner from 'components/GithubCorner'
+import Header from 'components/Header'
 
 import colors from 'scss/colors'
 import { wrapMain } from 'utils'
@@ -33,6 +34,7 @@ const ProjectsRoute = () => wrapMain(<Projects />)
 
 const App = () => (
   <Flex>
+    <Header />
     <GithubCorner />
     <Switch>
       <Route exact path='/' component={HomeRoute} />

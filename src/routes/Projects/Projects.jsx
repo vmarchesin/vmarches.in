@@ -10,49 +10,16 @@ import colors from "scss/colors"
 import { URLS } from "utils/constants"
 import { createIcon, wrapAnchor } from 'utils'
 
-const CenterCol = styled(Col)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
 const ProjectsRoute = () => (
   <div>
     <Row>
       <Col xs="12">
         <center>
           <Row>
-            <CenterCol xs="2">
-              <Link to="/">
-                {createIcon({
-                  customClass: "hvr-wobble-horizontal",
-                  hoverColor: colors.primary,
-                  icon: ["fas", "chevron-circle-left"],
-                })}
-              </Link>
-            </CenterCol>
-            <Col xs="8">
+            <Col xs="12">
               <RoundImage src={Profile}/>
             </Col>
           </Row>
-        </center>
-      </Col>
-      <Col xs="12" className="mt10">
-        <center>
-          Frontend Developer <a href={URLS.arquivei} target="_blank">@Arquivei</a>
-        </center>
-      </Col>
-    </Row>
-    <Row className="mt10">
-      <Col xs="12">
-        <center>
-          {[
-            { customClass: "hvr-buzz-out", icon: ["fab", "github"], hoverColor: colors.github, href: URLS.github },
-            { customClass: "hvr-buzz-out", icon: ["fab", "linkedin-in"], hoverColor: colors.linkedin, href: URLS.linkedin },
-            { customClass: "hvr-buzz-out", icon: ["fas", "at"], hoverColor: colors.github, href: URLS.mail },
-            { customClass: "hvr-buzz-out", icon: ["fab", "facebook-f"], hoverColor: colors.facebook, href: URLS.facebook },
-            { customClass: "hvr-buzz-out", icon: ["fab", "telegram-plane"], hoverColor: colors.telegram, href: URLS.telegram },
-          ].map((i, index) => wrapAnchor(i.href, createIcon(i, index)))}
         </center>
       </Col>
     </Row>
