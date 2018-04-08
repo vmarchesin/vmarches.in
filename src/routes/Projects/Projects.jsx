@@ -4,8 +4,8 @@ import { Col, Row } from "reactstrap"
 import { Link } from 'react-router-dom'
 
 import { RoundImage } from "components/Image"
+import Project from "components/Project"
 
-import Profile from "images/profile.jpeg"
 import colors from "scss/colors"
 import { URLS } from "utils/constants"
 import { createIcon, wrapAnchor } from 'utils'
@@ -14,10 +14,17 @@ const ProjectsRoute = () => (
   <div>
     <Row>
       <Col xs="12">
-        <center>
+        <center class="container">
           <Row>
-            <Col xs="12">
-              <RoundImage src={Profile}/>
+            <Col>
+              {[
+                {
+                  description: "A tool to add emojis to any text, based on context.",
+                  image: require("images/whatsapp.png"),
+                  title: "Vem de Zap bebê",
+                  url: "http://vemdezapbe.be",
+                },
+              ].map(p => <Project {...p} />)}
             </Col>
           </Row>
         </center>

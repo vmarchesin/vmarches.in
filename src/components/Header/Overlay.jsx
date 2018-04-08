@@ -71,7 +71,7 @@ const Section = styled(Row)`
 
   &.animate {
     animation: swoosh 2s ease-in both;
-    animation-delay: ${props => props.animationDelay};
+    animation-delay: ${props => props.animationdelay};
   }
   
   > a {
@@ -80,6 +80,11 @@ const Section = styled(Row)`
     color: white;
     font-size: 20px;
     text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: ${colors.primary};
+    }
   }
 
   justify-content: center;
@@ -98,14 +103,22 @@ const Menu = ({
       })}
     </span>
     <div className="container">
-      <Section animationDelay={'0.2s'} className={cs({ animate: isOpen })}>
-        <Link to="/" className="col-xs-12 col-md-8" onClick={onClose}>
-          home
+      <Section animationdelay={'0.2s'} className={cs({ animate: isOpen })}>
+        <Link to="/" className="col-xs-12 col-md-8 hvr-forward" onClick={onClose}>
+          {createIcon({
+            color: "#fff",
+            icon: ["fas", "home"],
+            size: "xs",
+          })} home
         </Link>
       </Section>
-      <Section animationDelay={'0.4s'} className={cs({ animate: isOpen })}>
-        <Link to="/projects" className="col-xs-12 col-md-8" onClick={onClose}>
-          projects
+      <Section animationdelay={'0.4s'} className={cs({ animate: isOpen })}>
+        <Link to="/projects" className="col-xs-12 col-md-8 hvr-forward" onClick={onClose}>
+          {createIcon({
+            color: "#fff",
+            icon: ["fas", "boxes"],
+            size: "xs",
+          })} projects
         </Link>
       </Section>
     </div>

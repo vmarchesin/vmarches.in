@@ -7,7 +7,6 @@ import Typist from 'react-typist'
 import { RoundImage } from "components/Image"
 import FontAwesome from "components/FontAwesome"
 
-import Profile from "images/profile.jpeg"
 import colors from "scss/colors"
 import { URLS } from "utils/constants"
 import { createIcon, wrapAnchor } from 'utils'
@@ -19,7 +18,7 @@ const HomeRoute = () => (
         <center>
           <Row>
             <Col xs="12">
-              <RoundImage src={Profile}/>
+              <RoundImage src={require("images/profile.png")}/>
             </Col>
           </Row>
         </center>

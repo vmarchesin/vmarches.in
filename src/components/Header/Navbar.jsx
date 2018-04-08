@@ -27,10 +27,7 @@ class Navbar extends React.Component {
     overlayIsOpen: false,
   }
 
-  toggleOverlay = () => {
-    console.log(this.state.overlayIsOpen)
-    this.setState({ overlayIsOpen: !this.state.overlayIsOpen })
-  }
+  toggleOverlay = () => { this.setState({ overlayIsOpen: !this.state.overlayIsOpen }) }
 
   render = () => (
     <Nav>
