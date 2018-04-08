@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Col, Row } from "reactstrap"
-import { Link } from 'react-router-dom'
 import cs from 'classnames'
 
 import Overlay from './Overlay'
