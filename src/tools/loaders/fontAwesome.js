@@ -1,5 +1,5 @@
 import fontawesome from '@fortawesome/fontawesome'
-import { faAt, faChevronCircleRight, faHome } from '@fortawesome/fontawesome-free-solid'
+import { faAt, faBars, faChevronCircleRight, faHome, faTimes } from '@fortawesome/fontawesome-free-solid'
 import {
   faFacebookF,
   faGithub,
@@ -10,8 +10,10 @@ import {
 
 fontawesome.library.add(
   faAt,
+  faBars,
   faChevronCircleRight,
   faHome,
+  faTimes,
   faFacebookF,
   faGithub,
   faLinkedinIn,

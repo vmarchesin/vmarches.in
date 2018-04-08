@@ -3,6 +3,8 @@ import cs from "classnames"
 import styled from "styled-components"
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
+import colors from "scss/colors"
+
 const Colored = styled.span`
   color: ${props => props.color}
   padding: 5px;
@@ -15,7 +17,7 @@ const Colored = styled.span`
 `
 
 const Component = ({
-  color = "#757575",
+  color = colors.icons,
   customClass = "",
   icon,
   hoverColor = "white",

@@ -27,11 +27,7 @@ const HomeRoute = () => (
       <Col xs="12" className="mt10">
         <center>
           <Typist
-            cursor={{
-              show: true,
-              blink: true,
-              element: '_',
-            }}
+            cursor={{ element: '_' }}
             startDelay={1000}
           >
             Frontend Developer <a href={URLS.arquivei} target="_blank">@Arquivei</a>
