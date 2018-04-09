@@ -29,7 +29,10 @@ const HomeRoute = () => (
             cursor={{ element: '_' }}
             startDelay={1000}
           >
-            Frontend Developer <a href={URLS.arquivei} target="_blank">@Arquivei</a>
+            Frontend Develpoer
+            <Typist.Backspace count={4} delay={500} />
+            <Typist.Delay ms={1000} />
+            {"oper "}<a href={URLS.arquivei} target="_blank">@Arquivei</a>
           </Typist>
         </center>
       </Col>

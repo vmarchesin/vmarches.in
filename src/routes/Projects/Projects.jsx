@@ -22,7 +22,7 @@ const ProjectsRoute = () => (
                   description: "A tool to add emojis to any text, based on context.",
                   image: require("images/whatsapp.png"),
                   title: "Vem de Zap bebê",
-                  url: "http://vemdezapbe.be",
+                  url: URLS.vemdezap,
                 },
               ].map(p => <Project {...p} />)}
             </Col>
