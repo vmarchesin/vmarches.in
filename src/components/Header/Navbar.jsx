@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Col, Row } from "reactstrap"
 import cs from 'classnames'
+import { Link } from 'react-router-dom'
 
 import Overlay from './Overlay'
 import { createIcon, wrapAnchor } from 'utils'
@@ -12,12 +13,23 @@ const Nav = styled.nav`
   padding: 20px;
   min-height: 50px;
 
-  > div div span {
+  > div div #burger-menu {
     cursor: pointer;
     transition: .5s ease-in-out;
 
     &.hide {
       transform:rotate(359deg) scale(0);
+    }
+  }
+
+  > div div #menu {
+    padding: 5px;
+    
+    > a {
+      color: inherit;
+      margin-left: 10px;
+      padding-bottom: 4px;
+      text-decoration: none;
     }
   }
 `
@@ -29,21 +41,39 @@ class Navbar extends React.Component {
 
   toggleOverlay = () => { this.setState({ overlayIsOpen: !this.state.overlayIsOpen }) }
 
-  render = () => (
-    <Nav>
-      <Overlay isOpen={this.state.overlayIsOpen} onClose={this.toggleOverlay}/>
-      <div className="container">
-        <Row className="justify-content-start">
-          <span className={cs({ hide: this.state.overlayIsOpen })} onClick={this.toggleOverlay}>
-            {createIcon({
-              hoverColor: colors.primary,
-              icon: ["fas", "bars"],
-            })}
-          </span>
-        </Row>
-      </div>
-    </Nav>
-  )
+  render = () => {
+    const location = window.location.pathname
+
+    return (
+      <Nav>
+        <Overlay isOpen={this.state.overlayIsOpen} onClose={this.toggleOverlay}/>
+        <div>
+          <Row className="justify-content-start">
+            <span
+              className={cs({ hide: this.state.overlayIsOpen }, "d-md-none")} 
+              id="burger-menu"
+              onClick={this.toggleOverlay}
+            >
+              {createIcon({
+                hoverColor: colors.primary,
+                icon: ["fas", "bars"],
+              })}
+            </span>
+            <span className="d-none d-md-block" id="menu">
+              <Link 
+                className={cs("hvr-underline-reveal", { "underline-reveal": location === "/" })}
+                to="/" 
+              >home</Link>
+              <Link 
+                className={cs("hvr-underline-reveal", { "underline-reveal": location === "/projects" })}
+                to="/projects" 
+              >projects</Link>
+            </span>
+          </Row>
+        </div>
+      </Nav>
+    )
+  }
 }
 
 export default Navbar

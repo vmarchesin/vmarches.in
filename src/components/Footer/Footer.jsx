@@ -37,7 +37,7 @@ const Padded = styled(Col)`
 
 const Component = () => (
   <Footer>
-    <div className="container">
+    <div>
       <Reverse className="justify-content-between">
         <Bottom xs="12" md="8">
           <span>
@@ -48,7 +48,7 @@ const Component = () => (
             </div>
             <div>
               <small>
-              Vinicius Marchesin Araujo, Todos os direitos reservados
+              Vinicius Marchesin Araujo
               </small>
             </div>
           </span>

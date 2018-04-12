@@ -14,7 +14,7 @@ const ProjectsRoute = () => (
   <div>
     <Row>
       <Col xs="12">
-        <center class="container">
+        <center className="container">
           <Row>
             <Col>
               {[
@@ -24,7 +24,7 @@ const ProjectsRoute = () => (
                   title: "Vem de Zap bebê",
                   url: URLS.vemdezap,
                 },
-              ].map(p => <Project {...p} />)}
+              ].map((p, i) => <span key={i}><Project {...p} /></span>)}
             </Col>
           </Row>
         </center>
