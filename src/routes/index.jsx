@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { hot } from 'react-hot-loader'
 import { Route, Switch } from 'react-router-dom'
-import Favicon from 'react-favicon'
 
 import Home from 'routes/Home'
 import Projects from 'routes/Projects'
@@ -35,7 +34,6 @@ const ProjectsRoute = () => wrapMain(<Projects />)
 
 const App = () => (
   <Flex>
-    <Favicon url={require('images/favicon.ico')}/>
     <Header />
     <GithubCorner />
     <Switch>
