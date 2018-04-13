@@ -81,6 +81,7 @@ const Section = styled(Row)`
     font-size: 20px;
     text-decoration: none;
     transition: 0.3s;
+    white-space: nowrap;
 
     &:hover {
       background-color: ${colors.primary};
