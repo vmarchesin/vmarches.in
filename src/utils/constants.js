@@ -5,7 +5,7 @@ export const URLS = {
   linkedin: "www.linkedin.com/in/vmarchesin",
   mail: "mailto:dev@vmarches.in",
   repo: "https://github.com/vmarchesin/vmarches.in",
-  telegram: "https://web.telegram.org/#/im?p=@vmarchesin",
+  telegram: "https://telegram.me/vmarchesin",
   vemdezap: "http://vemdezapbe.be",
 }
 
