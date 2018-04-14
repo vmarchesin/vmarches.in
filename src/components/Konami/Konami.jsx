@@ -1,9 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
-
-import { BoxedImage } from 'components/Image'
-
-import { KONAMI } from 'utils/constants'
 
 class Konami extends React.Component {
   constructor(props) {
@@ -14,8 +9,6 @@ class Konami extends React.Component {
       input: [],
     }
 
-    this._secret = KONAMI[new Date().getDay() % KONAMI.length]
-    this._audio = new Audio(this._secret.audio)
     this._code = props.code 
   }
 
@@ -31,29 +24,16 @@ class Konami extends React.Component {
 
     if (this.state.input.join("").includes(this._code.join("")) && !done) {
       this.setState({ done: true }, () => { 
-        this._audio.play()
-        this._audio.loop = true
+        this.props.action && this.props.action()
       })
-      setInterval(this.jumpImage, 500)
     }
   }
 
-  jumpImage = () => {
-    this._img.style.top = `${Math.round(Math.random() * 60)}vh`
-    this._img.style.left = `${Math.round(Math.random() * 70)}vw`
-  }
-
-  render = () => do {
-    if (!this.state.done) {
-      null
-    } else {
-      <img
-        ref={img => this._img = img}
-        src={require(`images/${this._secret.image}`)} 
-        style={{ position: 'fixed', zIndex: 999 }}
-      />
-    }
-  }
+  render = () => (
+    <div style={{ display: !this.state.done ? "none" : "block" }}>
+      {this.props.children}
+    </div>
+  )
 }
 
 Konami.defaultProps = {

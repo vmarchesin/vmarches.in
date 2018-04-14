@@ -14,12 +14,15 @@ import 'scss/fonts'
 
 // Loaders
 import 'tools/loaders/fontAwesome'
+import konami from 'tools/loaders/konami'
 
 ReactDOM.render(
   <BrowserRouter history={browserHistory}>
     <React.Fragment>
       <Favicon url={require('images/favicon.ico')}/>
-      <Konami />
+      <Konami action={konami.action}>
+        {konami.image}
+      </Konami>
       <App/>
     </React.Fragment>
   </BrowserRouter>,
