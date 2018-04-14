@@ -61,6 +61,7 @@
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-favicon": "0.0.14",
+    "react-konami-code": "^1.1.1",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.3.0",
     "react-typist": "^2.0.4",

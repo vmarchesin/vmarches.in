@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { browserHistory, BrowserRouter } from 'react-router-dom'
 import Favicon from 'react-favicon'
+import Konami from 'react-konami-code'
 
-import Konami from 'components/Konami'
 import App from 'routes'
 
 // Styles
