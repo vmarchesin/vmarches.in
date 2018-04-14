@@ -24,5 +24,10 @@ export const KONAMI = [
     audio: "http://htftp.offroadsz.com/marinhaker/drugi/mp3/Tom%20Jones-Greatest%20Hits%20-%20The%20Platinum%20Edition%202006%20(with%20Covers)/01%20It's%20Not%20Unusual.mp3",
     image: "carlton.gif",
     name: "Carlton Dance",
+  },
+  {
+    audio: "https://ia801406.us.archive.org/25/items/YouAreAPirate/YouAreAPirate_64kb.mp3",
+    image: "limewire.gif",
+    name: "LOL Limewire", 
   }
 ]

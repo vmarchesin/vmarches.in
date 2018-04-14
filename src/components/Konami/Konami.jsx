@@ -14,7 +14,7 @@ class Konami extends React.Component {
       input: [],
     }
 
-    this._secret = KONAMI[Math.floor(Math.random() * KONAMI.length)]
+    this._secret = KONAMI[new Date().getDay() % KONAMI.length]
     this._audio = new Audio(this._secret.audio)
     this._code = props.code 
   }
@@ -30,7 +30,10 @@ class Konami extends React.Component {
     this.setState({ input })
 
     if (this.state.input.join("").includes(this._code.join("")) && !done) {
-      this.setState({ done: true }, () => this._audio.play())
+      this.setState({ done: true }, () => { 
+        this._audio.play()
+        this._audio.loop = true
+      })
       setInterval(this.jumpImage, 500)
     }
   }
