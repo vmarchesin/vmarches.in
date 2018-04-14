@@ -21,7 +21,7 @@ export const KONAMI = [
     name: "Rick Roll",
   },
   {
-    audio: "http://htftp.offroadsz.com/marinhaker/drugi/mp3/Tom%20Jones-Greatest%20Hits%20-%20The%20Platinum%20Edition%202006%20(with%20Covers)/01%20It's%20Not%20Unusual.mp3",
+    audio: "http://api.ning.com/files/rK3iKQe-Lv8CSdE8XSYsFIqSlh-FhZYXT6YQvp2SwSTqC6-I3BfiDpvLDhqkmYJ5Wh94*u6DJP3WaUOwWXJlXtYzmikBOMLx/01ItsNotUnusual.mp3",
     image: "carlton.gif",
     name: "Carlton Dance",
   },
