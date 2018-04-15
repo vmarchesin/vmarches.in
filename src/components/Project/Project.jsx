@@ -14,6 +14,7 @@ const Box = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
   }
 
   > div .align-left {
@@ -21,6 +22,10 @@ const Box = styled.div`
 
     > div {
       padding: 5px 0;
+      
+      > a {
+        word-break: break-all;
+      }
     }
   }
 `
@@ -33,15 +38,17 @@ const Project = ({
 }) => (
   <Box>
     <Row>
-      <Col className='logo' xs='4'>
-        <BoxedImage src={image} w='100px' />
+      <Col className='logo' xs='12' md='4'>
+        <BoxedImage src={image} w='100px' h='100px'/>
       </Col>
-      <Col className='align-left' xs='8'>
+      <Col className='align-left' xs='12' md='8'>
         <Row><h4>{title}</h4></Row>
         <Row>{description}</Row>
         {url
           ? <Row>
-              <a href={url} target='_blank'>{url}</a>
+              <small>
+                <a href={url} target='_blank'>{url}</a>
+              </small>
             </Row>
           : false}
       </Col>

@@ -1,19 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Image = styled.img`
-  max-height: 200px;
-  max-width: 200px;
+export const Boxed = styled.img`
+  max-height: 256px!important;
+  max-width: 256px!important;
 
-  height: ${props => props.h};
-  width: ${props => props.w};
+  height: ${props => props.h}!important;
+  width: ${props => props.w}!important;
 `
 const Component = ({
-  h = "auto",
+  className = '',
+  h = 'auto',
   src,
-  w = "auto",
+  w = 'auto',
 }) => (
-  <Image 
+  <Boxed
+    className={className}
     h={h}
     src={src}
     w={w}

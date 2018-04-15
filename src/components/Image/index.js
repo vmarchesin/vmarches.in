@@ -1,2 +1,2 @@
-export RoundImage from "./Round"
-export BoxedImage from "./Boxed"
+export RoundImage from './Round'
+export BoxedImage from './Boxed'

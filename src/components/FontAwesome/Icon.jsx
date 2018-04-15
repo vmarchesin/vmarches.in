@@ -1,9 +1,9 @@
 import React from 'react'
-import cs from "classnames"
-import styled from "styled-components"
+import cs from 'classnames'
+import styled from 'styled-components'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
-import colors from "scss/colors"
+import colors from 'scss/colors'
 
 const Colored = styled.span`
   color: ${props => props.color}
@@ -18,11 +18,11 @@ const Colored = styled.span`
 
 const Component = ({
   color = colors.icons,
-  customClass = "",
+  customClass = '',
   icon,
-  hoverColor = "white",
+  hoverColor = 'white',
   pulse = false,
-  size = "2x",
+  size = '2x',
   spin = false,
 }) => (
   <Colored

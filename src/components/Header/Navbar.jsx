@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Col, Row } from "reactstrap"
+import { Col, Row } from 'reactstrap'
 import cs from 'classnames'
 import { Link } from 'react-router-dom'
 
 import Overlay from './Overlay'
 import { createIcon, wrapAnchor } from 'utils'
 
-import colors from "scss/colors"
+import colors from 'scss/colors'
 
 const Nav = styled.nav`
   padding: 20px;
@@ -48,25 +48,25 @@ class Navbar extends React.Component {
       <Nav>
         <Overlay isOpen={this.state.overlayIsOpen} onClose={this.toggleOverlay}/>
         <div>
-          <Row className="justify-content-start">
+          <Row className='justify-content-start'>
             <span
-              className={cs({ hide: this.state.overlayIsOpen }, "d-md-none")} 
-              id="burger-menu"
+              className={cs({ hide: this.state.overlayIsOpen }, 'd-md-none')} 
+              id='burger-menu'
               onClick={this.toggleOverlay}
             >
               {createIcon({
                 hoverColor: colors.primary,
-                icon: ["fas", "bars"],
+                icon: ['fas', 'bars'],
               })}
             </span>
-            <span className="d-none d-md-block" id="menu">
+            <span className='d-none d-md-block' id='menu'>
               <Link 
-                className={cs("hvr-underline-reveal", { "underline-reveal": location === "/" })}
-                to="/" 
+                className={cs('hvr-underline-reveal', { 'underline-reveal': location === '/' })}
+                to='/' 
               >home</Link>
               <Link 
-                className={cs("hvr-underline-reveal", { "underline-reveal": location === "/projects" })}
-                to="/projects" 
+                className={cs('hvr-underline-reveal', { 'underline-reveal': location === '/projects' })}
+                to='/projects' 
               >projects</Link>
             </span>
           </Row>

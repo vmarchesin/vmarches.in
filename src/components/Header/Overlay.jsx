@@ -6,7 +6,7 @@ import cs from 'classnames'
 
 import { createIcon } from 'utils'
 
-import colors from "scss/colors"
+import colors from 'scss/colors'
 
 const Overlay = styled.div`
   height: 100%;
@@ -97,28 +97,28 @@ const Menu = ({
   onClose,
 }) => (
   <Overlay isOpen={isOpen}>
-    <span className="close" onClick={onClose}>
+    <span className='close' onClick={onClose}>
       {createIcon({
-        icon: ["fas", "times"],
-        size: "xs",
+        icon: ['fas', 'times'],
+        size: 'xs',
       })}
     </span>
-    <div className="container">
+    <div className='container'>
       <Section animationdelay={'0.2s'} className={cs({ animate: isOpen })}>
-        <Link to="/" className="col-xs-12 col-md-8 hvr-forward" onClick={onClose}>
+        <Link to='/' className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
           {createIcon({
-            color: "#fff",
-            icon: ["fas", "home"],
-            size: "xs",
+            color: '#fff',
+            icon: ['fas', 'home'],
+            size: 'xs',
           })} home
         </Link>
       </Section>
       <Section animationdelay={'0.4s'} className={cs({ animate: isOpen })}>
-        <Link to="/projects" className="col-xs-12 col-md-8 hvr-forward" onClick={onClose}>
+        <Link to='/projects' className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
           {createIcon({
-            color: "#fff",
-            icon: ["fas", "boxes"],
-            size: "xs",
+            color: '#fff',
+            icon: ['fas', 'boxes'],
+            size: 'xs',
           })} projects
         </Link>
       </Section>

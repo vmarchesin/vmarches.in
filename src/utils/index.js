@@ -1,5 +1,5 @@
 import React from 'react'
-import FontAwesome from "components/FontAwesome"
+import FontAwesome from 'components/FontAwesome'
 
 export const createIcon = (props, key) => (
   <FontAwesome
@@ -9,7 +9,7 @@ export const createIcon = (props, key) => (
 )
 
 export const wrapAnchor = (href, children, key) =>(
-  <a href={href} target="_blank" key={key || 0}>
+  <a href={href} target='_blank' key={key || 0}>
   {children}
   </a>
 )
