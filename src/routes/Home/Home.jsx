@@ -1,17 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Col, Row } from 'reactstrap'
-import { Link } from 'react-router-dom'
 import Typist from 'react-typist'
 
 import { RoundImage } from 'components/Image'
-import FontAwesome from 'components/FontAwesome'
 
 import colors from 'scss/colors'
 import { URLS } from 'utils/constants'
-import { createIcon, wrapAnchor } from 'utils'
+import { createIcon, wrapAnchor, wrapMain } from 'utils'
 
-const HomeRoute = () => (
+const HomeRoute = () => wrapMain(
   <div>
     <Row>
       <Col xs='12'>

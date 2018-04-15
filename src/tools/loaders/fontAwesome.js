@@ -3,6 +3,7 @@ import {
   faAt,
   faBars,
   faBoxes,
+  faChartPie,
   faChevronCircleRight,
   faHome,
   faTimes 

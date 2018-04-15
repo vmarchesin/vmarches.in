@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import Home from 'routes/Home'
 import Projects from 'routes/Projects'
+import Skills from 'routes/Skills'
 
 import Footer from 'components/Footer'
 import GithubCorner from 'components/GithubCorner'
@@ -29,16 +30,14 @@ const Flex = styled.div`
   }
 `
 
-const HomeRoute = () => wrapMain(<Home />)
-const ProjectsRoute = () => wrapMain(<Projects />)
-
 const App = () => (
   <Flex>
     <Header />
     <GithubCorner />
     <Switch>
-      <Route exact path='/' component={HomeRoute} />
-      <Route exact path='/projects' component={ProjectsRoute} />
+      <Route exact path='/' component={Home} />
+      <Route exact path='/projects' component={Projects} />
+      <Route exact path='/skills' component={Skills} />
     </Switch>
     <Footer />
   </Flex>

@@ -8,6 +8,8 @@ import App from 'routes'
 
 // Styles
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'chartist/dist/chartist.min.css'
+// import 'chartist/dist/chartist.min.js'
 import 'scss/animations'
 import 'scss/layout'
 import 'scss/fonts'

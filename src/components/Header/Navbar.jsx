@@ -60,14 +60,17 @@ class Navbar extends React.Component {
               })}
             </span>
             <span className='d-none d-md-block' id='menu'>
-              <Link 
-                className={cs('hvr-underline-reveal', { 'underline-reveal': location === '/' })}
-                to='/' 
-              >home</Link>
-              <Link 
-                className={cs('hvr-underline-reveal', { 'underline-reveal': location === '/projects' })}
-                to='/projects' 
-              >projects</Link>
+              {[
+                { name: 'home', path: '/' },
+                { name: 'projects', path: '/projects' },
+                // { name: 'skills', path: '/skills' },
+              ].map((l, i) => (
+                <Link 
+                  className={cs('hvr-underline-reveal', { 'underline-reveal': location === l.path })}
+                  key={i}
+                  to={l.path}
+                >{l.name}</Link>
+              ))}
             </span>
           </Row>
         </div>

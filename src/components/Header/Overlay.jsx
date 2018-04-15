@@ -104,24 +104,21 @@ const Menu = ({
       })}
     </span>
     <div className='container'>
-      <Section animationdelay={'0.2s'} className={cs({ animate: isOpen })}>
-        <Link to='/' className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
+    {[
+      { delay: '0.1s', icon: 'home', name: 'home', path: '/' },
+      { delay: '0.2s', icon: 'boxes', name: 'projects', path: '/projects' },
+      // { delay: '0.3s', icon: 'chart-pie', name: 'skills', path: '/skills' },
+    ].map((s, i) => (
+      <Section animationdelay={s.delay} className={cs({ animate: isOpen })} key={i}>
+        <Link to={s.path} className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
           {createIcon({
             color: '#fff',
-            icon: ['fas', 'home'],
+            icon: ['fas', s.icon],
             size: 'xs',
-          })} home
+          })}{` ${s.name}`}
         </Link>
       </Section>
-      <Section animationdelay={'0.4s'} className={cs({ animate: isOpen })}>
-        <Link to='/projects' className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
-          {createIcon({
-            color: '#fff',
-            icon: ['fas', 'boxes'],
-            size: 'xs',
-          })} projects
-        </Link>
-      </Section>
+    ))}
     </div>
   </Overlay>
 )

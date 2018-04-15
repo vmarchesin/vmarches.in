@@ -1,0 +1,31 @@
+.skill-programming {
+  .ct-series-a {
+    line: {
+      transition: 2s ease-in-out;
+    }
+
+    :nth-child(1) {
+      stroke: #f7df1e;
+    }
+  
+    :nth-child(2) {
+      stroke: #f14a29;
+    }
+  
+    :nth-child(3) {
+      stroke: #264de4;
+    }
+  
+    :nth-child(4) {
+      stroke: #00aaeb;
+    }
+  
+    :nth-child(5) {
+      stroke: #ffde57;
+    }
+  }
+}
+
+.ct-label {
+  font-size: 0.65rem;
+}
