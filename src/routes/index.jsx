@@ -5,14 +5,13 @@ import { Route, Switch } from 'react-router-dom'
 
 import Home from 'routes/Home'
 import Projects from 'routes/Projects'
-import Skills from 'routes/Skills'
 
 import Footer from 'components/Footer'
 import GithubCorner from 'components/GithubCorner'
 import Header from 'components/Header'
 
 import colors from 'scss/colors'
-import { wrapMain } from 'utils'
+// import { wrapMain } from 'utils'
 
 const Flex = styled.div`
   background-color: ${colors.bgColor};
@@ -37,7 +36,6 @@ const App = () => (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/projects' component={Projects} />
-      <Route exact path='/skills' component={Skills} />
     </Switch>
     <Footer />
   </Flex>
