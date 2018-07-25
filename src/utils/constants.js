@@ -1,6 +1,6 @@
 export const URLS = {
   arquivei: 'https://arquivei.com.br',
-  facebook: 'https://www.facebook.com/vini.marchesin',
+  facebook: 'https://www.facebook.com/viniciusmarchesin',
   github: 'https://github.com/vmarchesin',
   linkedin: 'www.linkedin.com/in/vmarchesin',
   mail: 'mailto:dev@vmarches.in',
@@ -30,6 +30,6 @@ export const KONAMI = [
   {
     audio: 'https://ia801406.us.archive.org/25/items/YouAreAPirate/YouAreAPirate_64kb.mp3',
     image: 'limewire.gif',
-    name: 'LOL Limewire', 
+    name: 'LOL Limewire',
   }
 ]
