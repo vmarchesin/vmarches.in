@@ -2,7 +2,7 @@ export const URLS = {
   arquivei: 'https://arquivei.com.br',
   facebook: 'https://www.facebook.com/viniciusmarchesin',
   github: 'https://github.com/vmarchesin',
-  linkedin: 'www.linkedin.com/in/vmarchesin',
+  linkedin: 'https://www.linkedin.com/in/vmarchesin/',
   mail: 'mailto:dev@vmarches.in',
   repo: 'https://github.com/vmarchesin/vmarches.in',
   telegram: 'https://telegram.me/vmarchesin',
