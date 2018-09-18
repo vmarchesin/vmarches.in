@@ -5,7 +5,8 @@ import cs from 'classnames'
 import { Link } from 'react-router-dom'
 
 import Overlay from './Overlay'
-import { createIcon, wrapAnchor } from 'utils'
+import { createIcon } from 'components/FontAwesome'
+import { wrapAnchor } from 'utils'
 
 import colors from 'scss/colors'
 
@@ -24,7 +25,7 @@ const Nav = styled.nav`
 
   > div div #menu {
     padding: 5px;
-    
+
     > a {
       color: inherit;
       margin-left: 10px;
@@ -50,7 +51,7 @@ class Navbar extends React.Component {
         <div>
           <Row className='justify-content-start'>
             <span
-              className={cs({ hide: this.state.overlayIsOpen }, 'd-md-none')} 
+              className={cs({ hide: this.state.overlayIsOpen }, 'd-md-none')}
               id='burger-menu'
               onClick={this.toggleOverlay}
             >
@@ -65,7 +66,7 @@ class Navbar extends React.Component {
                 { name: 'projects', path: '/projects' },
                 // { name: 'skills', path: '/skills' },
               ].map((l, i) => (
-                <Link 
+                <Link
                   className={cs('hvr-underline-reveal', { 'underline-reveal': location === l.path })}
                   key={i}
                   to={l.path}

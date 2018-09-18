@@ -5,7 +5,8 @@ import { RoundImage } from 'components/Image'
 import Project from 'components/Project'
 
 import { URLS } from 'utils/constants'
-import { createIcon, wrapAnchor, wrapMain } from 'utils'
+import { createIcon } from 'components/FontAwesome'
+import { wrapAnchor, wrapMain } from 'utils'
 
 const ProjectsRoute = () => wrapMain(
   <div>
@@ -29,7 +30,7 @@ const ProjectsRoute = () => wrapMain(
             <Col xs='12'>
               <hr />
             </Col>
-          </Row>  
+          </Row>
           <Row className='mt10'>
             <Col xs='12'>
               <h3>Fun Projects</h3>

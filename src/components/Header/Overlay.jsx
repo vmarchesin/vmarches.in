@@ -4,7 +4,7 @@ import { Col, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import cs from 'classnames'
 
-import { createIcon } from 'utils'
+import { createIcon } from 'components/FontAwesome'
 
 import colors from 'scss/colors'
 
@@ -47,7 +47,7 @@ const Overlay = styled.div`
 `
 
 const Section = styled(Row)`
-  @keyframes swoosh { 
+  @keyframes swoosh {
     0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); }
     1.3% { transform: matrix3d(3.905, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -237.02, 0, 0, 1); }
     2.55% { transform: matrix3d(4.554, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -182.798, 0, 0, 1); }
@@ -66,14 +66,14 @@ const Section = styled(Row)`
     50% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.048, 0, 0, 1); }
     60.56% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.007, 0, 0, 1); }
     82.78% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   }
 
   &.animate {
     animation: swoosh 2s ease-in both;
     animation-delay: ${props => props.animationdelay};
   }
-  
+
   > a {
     background-color: ${colors.primaryDark};
     padding: 20px;

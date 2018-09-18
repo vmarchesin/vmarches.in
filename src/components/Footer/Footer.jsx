@@ -4,7 +4,8 @@ import { Col, Row } from 'reactstrap'
 
 import colors from 'scss/colors'
 import { URLS } from 'utils/constants'
-import { createIcon, wrapAnchor } from 'utils'
+import { createIcon } from 'components/FontAwesome'
+import { wrapAnchor } from 'utils'
 
 const Footer = styled.footer`
   background-color: ${colors.primary};
@@ -43,7 +44,7 @@ const Component = () => (
           <span>
             <div>
               <small>
-                Copyright © {new Date().getFullYear()} 
+                Copyright © {new Date().getFullYear()}
               </small>
             </div>
             <div>

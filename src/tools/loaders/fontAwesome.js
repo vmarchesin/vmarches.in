@@ -1,12 +1,11 @@
 import fontawesome from '@fortawesome/fontawesome'
-import { 
+import {
   faAt,
   faBars,
   faBoxes,
-  faChartPie,
   faChevronCircleRight,
   faHome,
-  faTimes 
+  faTimes
 } from '@fortawesome/fontawesome-free-solid'
 import {
   faFacebookF,
@@ -19,6 +18,7 @@ import {
 fontawesome.library.add(
   faAt,
   faBars,
+  faBoxes,
   faChevronCircleRight,
   faHome,
   faTimes,

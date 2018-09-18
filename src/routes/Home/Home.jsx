@@ -6,10 +6,11 @@ import { RoundImage } from 'components/Image'
 
 import colors from 'scss/colors'
 import { URLS } from 'utils/constants'
-import { createIcon, wrapAnchor, wrapMain } from 'utils'
+import { createIcon } from 'components/FontAwesome'
+import { wrapAnchor, wrapMain } from 'utils'
 
 const HomeRoute = () => wrapMain(
-  <div>
+  <div style={{ width: "100%" }}>
     <Row>
       <Col xs='12'>
         <center>
