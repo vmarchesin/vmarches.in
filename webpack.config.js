@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -42,6 +43,10 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [ 'file-loader' ],
       },
+      {
+        test: /\.mp3$/,
+        loader: 'file-loader',
+      },
     ],
   },
   resolve: {
@@ -68,5 +73,9 @@ module.exports = {
       template: 'src/index.html',
     }),
     new ExtractTextPlugin('styles.css'),
+    new CompressionPlugin({
+      minRatio: 0.8,
+      test: /\.(js|mp3)(\?.*)?$/i,
+    }),
   ],
 }
