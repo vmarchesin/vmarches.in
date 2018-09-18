@@ -4,12 +4,11 @@ import { browserHistory, BrowserRouter } from 'react-router-dom'
 import Favicon from 'react-favicon'
 import Konami from 'react-konami-code'
 
+import favicon from 'images/favicon.ico'
 import App from 'routes'
 
 // Styles
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'chartist/dist/chartist.min.css'
-// import 'chartist/dist/chartist.min.js'
 import 'scss/animations'
 import 'scss/layout'
 import 'scss/fonts'
@@ -21,8 +20,8 @@ import konami from 'tools/loaders/konami'
 ReactDOM.render(
   <BrowserRouter history={browserHistory}>
     <React.Fragment>
-      <Favicon url={require('images/favicon.ico')}/>
-      <Konami action={konami.action}>
+      <Favicon url={favicon}/>
+      <Konami action={konami.action} timeout={1000}>
         {konami.image}
       </Konami>
       <App/>
