@@ -65,6 +65,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
   },
   devtool: 'source-map',
   plugins: [
@@ -75,8 +76,8 @@ module.exports = {
     }),
     new ExtractTextPlugin('styles.css'),
     new CompressionPlugin({
-      minRatio: 0.8,
-      test: /\.(js|mp3)(\?.*)?$/i,
+      minRatio: 1,
+      test: /\.js(\?.*)?$/i,
     }),
     // new BundleAnalyzerPlugin(),
   ],
