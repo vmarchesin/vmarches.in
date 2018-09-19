@@ -31,7 +31,7 @@ const HomeRoute = () => wrapMain(
             Frontend Develpoer
             <Typist.Backspace count={4} delay={500} />
             <Typist.Delay ms={1000} />
-            {'oper '}<a href={URLS.arquivei} target='_blank'>@Arquivei</a>
+            {'oper '}<a href={URLS.ARQUIVEI} target='_blank'>@Arquivei</a>
           </Typist>
         </center>
       </Col>
@@ -40,11 +40,11 @@ const HomeRoute = () => wrapMain(
       <Col xs='12'>
         <center>
           {[
-            { customClass: 'hvr-buzz-out', icon: icons.github, hoverColor: colors.github, href: URLS.github },
-            { customClass: 'hvr-buzz-out', icon: icons.linkedin, hoverColor: colors.linkedin, href: URLS.linkedin },
-            { customClass: 'hvr-buzz-out', icon: icons.at, hoverColor: colors.github, href: URLS.mail },
-            { customClass: 'hvr-buzz-out', icon: icons.facebook, hoverColor: colors.facebook, href: URLS.facebook },
-            { customClass: 'hvr-buzz-out', icon: icons.telegram, hoverColor: colors.telegram, href: URLS.telegram },
+            { customClass: 'hvr-buzz-out', icon: icons.github, hoverColor: colors.github, href: URLS.GITHUB },
+            { customClass: 'hvr-buzz-out', icon: icons.linkedin, hoverColor: colors.linkedin, href: URLS.LINKEDIN },
+            { customClass: 'hvr-buzz-out', icon: icons.at, hoverColor: colors.github, href: URLS.MAIL },
+            { customClass: 'hvr-buzz-out', icon: icons.facebook, hoverColor: colors.facebook, href: URLS.FACEBOOK },
+            { customClass: 'hvr-buzz-out', icon: icons.telegram, hoverColor: colors.telegram, href: URLS.TELEGRAM },
           ].map((i, index) => wrapAnchor(i.href, createIcon(i), index))}
         </center>
       </Col>

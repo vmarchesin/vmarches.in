@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 import Overlay from './Overlay'
 import icons from 'tools/loaders/fontAwesome'
+import { URLS } from 'utils/constants'
 import { createIcon } from 'components/FontAwesome'
 
 import colors from 'scss/colors'
@@ -31,6 +32,13 @@ const Nav = styled.nav`
       margin-left: 10px;
       padding-bottom: 4px;
       text-decoration: none;
+
+      &:hover {
+        > span svg path {
+          fill: ${colors.primary};
+          transition: .5s ease-in-out;
+        }
+      }
     }
   }
 `
@@ -71,6 +79,15 @@ class Navbar extends React.Component {
                   to={l.path}
                 >{l.name}</Link>
               ))}
+                <a className='hvr-underline-reveal' href={URLS.MEDIUM}>
+                  blog
+                  {createIcon({
+                    hoverColor: colors.primary,
+                    color: colors.bgColor,
+                    size: '1x',
+                    icon: icons.chevronRight,
+                  })}
+                </a>
             </span>
           </Row>
         </div>

@@ -22,7 +22,7 @@ const ProjectsRoute = () => wrapMain(
                   description: 'Trigger an easter egg by pressing a sequence of keys.',
                   image: require('images/npm.png'),
                   title: 'react-konami-code',
-                  url: URLS.npm_konami,
+                  url: URLS.NPMKONAMI,
                 },
               ].map((p, i) => <span key={i}><Project {...p} /></span>)}
             </Col>
@@ -40,7 +40,7 @@ const ProjectsRoute = () => wrapMain(
                   description: 'A tool to add emojis to any text, based on context.',
                   image: require('images/whatsapp.png'),
                   title: 'Vem de Zap Bebê',
-                  url: URLS.vemdezap,
+                  url: URLS.VEMDEZAP,
                 },
               ].map((p, i) => <span key={i}><Project {...p} /></span>)}
             </Col>

@@ -1,12 +1,12 @@
 export const URLS = {
-  arquivei: 'https://arquivei.com.br',
-  facebook: 'https://www.facebook.com/viniciusmarchesin',
-  github: 'https://github.com/vmarchesin',
-  linkedin: 'https://www.linkedin.com/in/vmarchesin/',
-  mail: 'mailto:dev@vmarches.in',
-  repo: 'https://github.com/vmarchesin/vmarches.in',
-  telegram: 'https://telegram.me/vmarchesin',
-  vemdezap: 'http://vemdezapbe.be',
-
-  npm_konami: 'https://www.npmjs.com/package/react-konami-code',
+  ARQUIVEI: 'https://arquivei.com.br',
+  FACEBOOK: 'https://www.facebook.com/viniciusmarchesin',
+  GITHUB: 'https://github.com/vmarchesin',
+  LINKEDIN: 'https://www.linkedin.com/in/vmarchesin/',
+  MAIL: 'mailto:dev@vmarches.in',
+  MEDIUM: 'https://medium.com/@vmarchesin',
+  NPMKONAMI: 'https://www.npmjs.com/package/react-konami-code',
+  REPO: 'https://github.com/vmarchesin/vmarches.in',
+  TELEGRAM: 'https://telegram.me/vmarchesin',
+  VEMDEZAP: 'http://vemdezapbe.be',
 }
