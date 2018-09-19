@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const path = require('path')
 
 module.exports = {
@@ -77,5 +78,6 @@ module.exports = {
       minRatio: 0.8,
       test: /\.(js|mp3)(\?.*)?$/i,
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 }

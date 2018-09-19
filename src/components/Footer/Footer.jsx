@@ -4,8 +4,6 @@ import { Col, Row } from 'reactstrap'
 
 import colors from 'scss/colors'
 import { URLS } from 'utils/constants'
-import { createIcon } from 'components/FontAwesome'
-import { wrapAnchor } from 'utils'
 
 const Footer = styled.footer`
   background-color: ${colors.primary};

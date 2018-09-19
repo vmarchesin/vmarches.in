@@ -5,8 +5,8 @@ import cs from 'classnames'
 import { Link } from 'react-router-dom'
 
 import Overlay from './Overlay'
+import icons from 'tools/loaders/fontAwesome'
 import { createIcon } from 'components/FontAwesome'
-import { wrapAnchor } from 'utils'
 
 import colors from 'scss/colors'
 
@@ -57,14 +57,13 @@ class Navbar extends React.Component {
             >
               {createIcon({
                 hoverColor: colors.primary,
-                icon: ['fas', 'bars'],
+                icon: icons.bars,
               })}
             </span>
             <span className='d-none d-md-block' id='menu'>
               {[
                 { name: 'home', path: '/' },
                 { name: 'projects', path: '/projects' },
-                // { name: 'skills', path: '/skills' },
               ].map((l, i) => (
                 <Link
                   className={cs('hvr-underline-reveal', { 'underline-reveal': location === l.path })}

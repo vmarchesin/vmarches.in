@@ -5,8 +5,7 @@ import { RoundImage } from 'components/Image'
 import Project from 'components/Project'
 
 import { URLS } from 'utils/constants'
-import { createIcon } from 'components/FontAwesome'
-import { wrapAnchor, wrapMain } from 'utils'
+import { wrapMain } from 'utils'
 
 const ProjectsRoute = () => wrapMain(
   <div>

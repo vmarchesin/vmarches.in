@@ -4,6 +4,7 @@ import { Col, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import cs from 'classnames'
 
+import icons from 'tools/loaders/fontAwesome'
 import { createIcon } from 'components/FontAwesome'
 
 import colors from 'scss/colors'
@@ -99,21 +100,21 @@ const Menu = ({
   <Overlay isOpen={isOpen}>
     <span className='close' onClick={onClose}>
       {createIcon({
-        icon: ['fas', 'times'],
+        icon: icons.times,
         size: 'xs',
       })}
     </span>
     <div className='container'>
     {[
-      { delay: '0.1s', icon: 'home', name: 'home', path: '/' },
-      { delay: '0.2s', icon: 'boxes', name: 'projects', path: '/projects' },
+      { delay: '0.1s', icon: icons.home, name: 'home', path: '/' },
+      { delay: '0.2s', icon: icons.boxes, name: 'projects', path: '/projects' },
       // { delay: '0.3s', icon: 'chart-pie', name: 'skills', path: '/skills' },
     ].map((s, i) => (
       <Section animationdelay={s.delay} className={cs({ animate: isOpen })} key={i}>
         <Link to={s.path} className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
           {createIcon({
             color: '#fff',
-            icon: ['fas', s.icon],
+            icon: s.icon,
             size: 'xs',
           })}{` ${s.name}`}
         </Link>

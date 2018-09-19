@@ -6,6 +6,7 @@ import { RoundImage } from 'components/Image'
 
 import colors from 'scss/colors'
 import { URLS } from 'utils/constants'
+import icons from 'tools/loaders/fontAwesome'
 import { createIcon } from 'components/FontAwesome'
 import { wrapAnchor, wrapMain } from 'utils'
 
@@ -39,11 +40,11 @@ const HomeRoute = () => wrapMain(
       <Col xs='12'>
         <center>
           {[
-            { customClass: 'hvr-buzz-out', icon: ['fab', 'github'], hoverColor: colors.github, href: URLS.github },
-            { customClass: 'hvr-buzz-out', icon: ['fab', 'linkedin-in'], hoverColor: colors.linkedin, href: URLS.linkedin },
-            { customClass: 'hvr-buzz-out', icon: ['fas', 'at'], hoverColor: colors.github, href: URLS.mail },
-            { customClass: 'hvr-buzz-out', icon: ['fab', 'facebook-f'], hoverColor: colors.facebook, href: URLS.facebook },
-            { customClass: 'hvr-buzz-out', icon: ['fab', 'telegram-plane'], hoverColor: colors.telegram, href: URLS.telegram },
+            { customClass: 'hvr-buzz-out', icon: icons.github, hoverColor: colors.github, href: URLS.github },
+            { customClass: 'hvr-buzz-out', icon: icons.linkedin, hoverColor: colors.linkedin, href: URLS.linkedin },
+            { customClass: 'hvr-buzz-out', icon: icons.at, hoverColor: colors.github, href: URLS.mail },
+            { customClass: 'hvr-buzz-out', icon: icons.facebook, hoverColor: colors.facebook, href: URLS.facebook },
+            { customClass: 'hvr-buzz-out', icon: icons.telegram, hoverColor: colors.telegram, href: URLS.telegram },
           ].map((i, index) => wrapAnchor(i.href, createIcon(i), index))}
         </center>
       </Col>
