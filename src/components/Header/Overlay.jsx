@@ -4,6 +4,7 @@ import { Col, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import cs from 'classnames'
 
+import { URLS } from 'utils/constants'
 import icons from 'tools/loaders/fontAwesome'
 import { createIcon } from 'components/FontAwesome'
 
@@ -105,21 +106,37 @@ const Menu = ({
       })}
     </span>
     <div className='container'>
-    {[
-      { delay: '0.1s', icon: icons.home, name: 'home', path: '/' },
-      { delay: '0.2s', icon: icons.boxes, name: 'projects', path: '/projects' },
-      // { delay: '0.3s', icon: 'chart-pie', name: 'skills', path: '/skills' },
-    ].map((s, i) => (
-      <Section animationdelay={s.delay} className={cs({ animate: isOpen })} key={i}>
-        <Link to={s.path} className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
-          {createIcon({
-            color: '#fff',
-            icon: s.icon,
-            size: 'xs',
-          })}{` ${s.name}`}
-        </Link>
-      </Section>
-    ))}
+      <React.Fragment>
+        {[
+          { delay: '0.1s', icon: icons.home, name: 'home', path: '/' },
+          { delay: '0.2s', icon: icons.boxes, name: 'projects', path: '/projects' },
+          // { delay: '0.3s', icon: 'chart-pie', name: 'skills', path: '/skills' },
+        ].map((s, i) => (
+          <Section animationdelay={s.delay} className={cs({ animate: isOpen })} key={i}>
+            <Link to={s.path} className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
+              {createIcon({
+                color: '#fff',
+                icon: s.icon,
+                size: 'xs',
+              })}{` ${s.name}`}
+            </Link>
+          </Section>
+        ))}
+        <Section animationdelay='0.3s' className={cs({ animate: isOpen })}>
+          <a
+            href={URLS.MEDIUM}
+            target='_blank'
+            className='col-xs-12 col-md-8 hvr-forward'
+            onClick={onClose}
+          >
+            {createIcon({
+              color: '#fff',
+              icon: icons.medium,
+              size: 'xs',
+            })} blog
+          </a>
+        </Section>
+      </React.Fragment>
     </div>
   </Overlay>
 )

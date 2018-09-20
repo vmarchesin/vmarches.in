@@ -11,19 +11,23 @@ import faTimes from '@fortawesome/fontawesome-free-solid/faTimes'
 import faFacebookF from '@fortawesome/fontawesome-free-brands/faFacebookF'
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
 import faLinkedinIn from '@fortawesome/fontawesome-free-brands/faLinkedinIn'
+import faMediumM from '@fortawesome/fontawesome-free-brands/faMediumM'
 import faTelegram from '@fortawesome/fontawesome-free-brands/faTelegram'
 import faWhatsapp from '@fortawesome/fontawesome-free-brands/faFacebookF'
 
 const icons = {
+  // solid
   at: faAt,
   bars: faBars,
   boxes: faBoxes,
   chevronRight: faChevronCircleRight,
   home: faHome,
   times: faTimes,
+  // brands
   facebook: faFacebookF,
   github: faGithub,
   linkedin: faLinkedinIn,
+  medium: faMediumM,
   telegram: faTelegram,
   whatsapp: faWhatsapp,
 }
