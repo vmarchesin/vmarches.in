@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import Home from 'routes/Home'
 import Projects from 'routes/Projects'
+import Error404 from 'routes/Error404'
 
 import Footer from 'components/Footer'
 import GithubCorner from 'components/GithubCorner'
@@ -36,6 +37,7 @@ const App = () => (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/projects' component={Projects} />
+      <Route component={Error404} />
     </Switch>
     <Footer />
   </Flex>
