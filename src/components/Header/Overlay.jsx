@@ -49,38 +49,19 @@ const Overlay = styled.div`
 `
 
 const Section = styled(Row)`
-  @keyframes swoosh {
-    0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, 0, 0, 1); }
-    1.3% { transform: matrix3d(3.905, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -237.02, 0, 0, 1); }
-    2.55% { transform: matrix3d(4.554, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -182.798, 0, 0, 1); }
-    4.1% { transform: matrix3d(4.025, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -125.912, 0, 0, 1); }
-    5.71% { transform: matrix3d(3.039, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -79.596, 0, 0, 1); }
-    8.11% { transform: matrix3d(1.82, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -31.647, 0, 0, 1); }
-    8.81% { transform: matrix3d(1.581, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -21.84, 0, 0, 1); }
-    11.96% { transform: matrix3d(1.034, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 4.825, 0, 0, 1); }
-    12.11% { transform: matrix3d(1.023, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 5.53, 0, 0, 1); }
-    15.07% { transform: matrix3d(0.947, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 12.662, 0, 0, 1); }
-    16.12% { transform: matrix3d(0.951, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 13.007, 0, 0, 1); }
-    27.23% { transform: matrix3d(1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2.352, 0, 0, 1); }
-    27.58% { transform: matrix3d(1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2.121, 0, 0, 1); }
-    38.34% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.311, 0, 0, 1); }
-    40.09% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.291, 0, 0, 1); }
-    50% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.048, 0, 0, 1); }
-    60.56% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.007, 0, 0, 1); }
-    82.78% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  }
-
   &.animate {
     animation: swoosh 2s ease-in both;
-    animation-delay: ${props => props.animationdelay};
+    animation-delay: ${props => props.animationdelay}s;
   }
 
   > a {
     background-color: ${colors.primaryDark};
-    padding: 20px;
-    color: white;
+    border: 2px solid ${colors.white};
+    border-radius: 10px;
+    color: ${colors.white};
     font-size: 20px;
+    margin-bottom: 4px;
+    padding: 20px;
     text-decoration: none;
     transition: 0.3s;
     white-space: nowrap;
@@ -100,43 +81,36 @@ const Menu = ({
 }) => (
   <Overlay isOpen={isOpen}>
     <span className='close' onClick={onClose}>
-      {createIcon({
-        icon: icons.times,
-        size: 'xs',
-      })}
+      {createIcon({ icon: icons.times, size: 'xs' })}
     </span>
     <div className='container'>
-      <React.Fragment>
-        {[
-          { delay: '0.1s', icon: icons.home, name: 'home', path: '/' },
-          { delay: '0.2s', icon: icons.boxes, name: 'projects', path: '/projects' },
-          // { delay: '0.3s', icon: 'chart-pie', name: 'skills', path: '/skills' },
-        ].map((s, i) => (
-          <Section animationdelay={s.delay} className={cs({ animate: isOpen })} key={i}>
-            <Link to={s.path} className='col-xs-12 col-md-8 hvr-forward' onClick={onClose}>
-              {createIcon({
-                color: '#fff',
-                icon: s.icon,
-                size: 'xs',
-              })}{` ${s.name}`}
-            </Link>
-          </Section>
-        ))}
-        <Section animationdelay='0.3s' className={cs({ animate: isOpen })}>
-          <a
-            href={URLS.MEDIUM}
-            target='_blank'
-            className='col-xs-12 col-md-8 hvr-forward'
-            onClick={onClose}
-          >
-            {createIcon({
-              color: '#fff',
-              icon: icons.medium,
-              size: 'xs',
-            })} blog
-          </a>
+      {[
+        { icon: icons.home, name: 'home', path: '/' },
+        { icon: icons.boxes, name: 'projects', path: '/projects' },
+        { icon: icons.medium, name: 'blog', href: URLS.MEDIUM },
+      ].map((section, i) => (
+        <Section animationdelay={(i + 1) / 10} className={cs({ animate: isOpen })} key={i}>
+          {(() => {
+            const content = (
+              <React.Fragment>
+                {createIcon({ color: colors.white, icon: section.icon, size: 'xs' })}
+                {` ${section.name}`}
+              </React.Fragment>
+            )
+            const props = { className: 'col-xs-12 col-md-8', onClick: onClose }
+
+            return section.href ? (
+              <a href={section.href} target='_blank' {...props}>
+                {content}
+              </a>
+            ) : (
+              <Link to={section.path} {...props}>
+                {content}
+              </Link>
+            )
+          })()}
         </Section>
-      </React.Fragment>
+      ))}
     </div>
   </Overlay>
 )

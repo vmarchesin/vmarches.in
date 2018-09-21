@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
-import { wrapAnchor, wrapMain } from 'utils'
+import colors from 'scss/colors'
 
 const Oops = styled.div`
   position: absolute;
@@ -10,7 +9,7 @@ const Oops = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  color: white;
+  color: ${colors.white};
 
   text-align: center;
   font-style: italic;
@@ -84,9 +83,9 @@ const Oops = styled.div`
   }
 
   a {
-    border: 1px solid white;
+    border: 2px solid ${colors.white};
     border-radius: 4px;
-    color: white;
+    color: ${colors.white};
     text-decoration: none;
 
     font-size: 15px;
