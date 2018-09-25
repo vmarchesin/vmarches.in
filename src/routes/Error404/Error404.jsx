@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import colors from 'scss/colors'
 
+// Idea taken from https://codepen.io/kaypooma/pen/ehfjC
 const Oops = styled.div`
   position: absolute;
   top: 0;
