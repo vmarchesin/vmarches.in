@@ -1,10 +1,22 @@
 import React from 'react'
-import toasty from '../../assets/audio/toasty.mp3'
+import { BoxedImage } from 'components/Image'
+import styled from 'styled-components'
 
-const setup = (() => {
-  const audio = new Audio(toasty)
+import toastyImage from 'assets/images/toasty.png'
+import toastyAudio from 'assets/audio/toasty.mp3'
 
-  return { action: () => audio.play() }
+const ToastyImage = styled(BoxedImage)`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+
+  animation: slide-in .5s ease-in-out;
+`
+
+export default (() => {
+  const audio = new Audio(toastyAudio)
+  const image = <ToastyImage src={toastyImage} />
+
+  return { action: () => audio.play(), image }
 })()
-
-export default setup

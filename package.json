@@ -50,7 +50,7 @@
     "style-loader": "^0.20.3",
     "webpack": "^4.5.0",
     "webpack-bundle-analyzer": "^3.0.2",
-    "webpack-cli": "^2.0.13",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
@@ -63,7 +63,7 @@
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-favicon": "0.0.14",
-    "react-konami-code": "^1.2.0",
+    "react-konami-code": "^1.3.0",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.3.0",
     "react-typist": "^2.0.4",

@@ -420,3 +420,9 @@
   82.78% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
+
+/* Toasty slide-in */
+@keyframes slide-in {
+  0% { margin-bottom: -160px }
+  50%, 100% { margin-bottom: 0 }
+}
