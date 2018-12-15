@@ -17,7 +17,7 @@ const HomeRoute = () => wrapMain(
         <center>
           <Row>
             <Col xs='12'>
-              <RoundImage src={require('images/profile.png')} w='200px' h='200px'/>
+              <RoundImage src={require('assets/images/profile.png')} w='200px' h='200px'/>
             </Col>
           </Row>
         </center>

@@ -4,7 +4,7 @@ import { browserHistory, BrowserRouter } from 'react-router-dom'
 import Favicon from 'react-favicon'
 import Konami from 'react-konami-code'
 
-import favicon from 'images/favicon.ico'
+import favicon from 'assets/images/favicon.ico'
 import App from 'routes'
 
 // Styles

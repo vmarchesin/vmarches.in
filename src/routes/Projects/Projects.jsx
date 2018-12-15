@@ -7,6 +7,9 @@ import Project from 'components/Project'
 import { URLS } from 'utils/constants'
 import { wrapMain } from 'utils'
 
+import whatsappImage from 'assets/images/whatsapp.png'
+import npmImage from 'assets/images/npm.png'
+
 const ProjectsRoute = () => wrapMain(
   <div>
     <Row>
@@ -20,7 +23,7 @@ const ProjectsRoute = () => wrapMain(
               {[
                 {
                   description: 'Trigger an easter egg by pressing a sequence of keys.',
-                  image: require('images/npm.png'),
+                  image: npmImage,
                   title: 'react-konami-code',
                   url: URLS.NPMKONAMI,
                 },
@@ -38,7 +41,7 @@ const ProjectsRoute = () => wrapMain(
               {[
                 {
                   description: 'A tool to add emojis to any text, based on context.',
-                  image: require('images/whatsapp.png'),
+                  image: whatsappImage,
                   title: 'Vem de Zap Bebê',
                   url: URLS.VEMDEZAP,
                 },

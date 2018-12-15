@@ -109,7 +109,7 @@ const Error404 = () => {
   return (
     <Oops>
       <div className='error'>404</div>
-      <div className='info'>Looks like the page you are trying to access doesn't exist.</div>
+      <div className='info'>Looks like the page you are trying to access either ran away or doesn't exist.</div>
       <Link className='hvr-hang' to='/'>{grawlix} go back</Link>
     </Oops>
   )
