@@ -22,7 +22,7 @@ const Box = styled.div`
 
     > div {
       padding: 5px 0;
-      
+
       > a {
         word-break: break-all;
       }
@@ -42,15 +42,10 @@ const Project = ({
         <BoxedImage src={image} w='100px' h='100px'/>
       </Col>
       <Col className='align-left' xs='12' md='8'>
-        <Row><h4>{title}</h4></Row>
+        <Row><h4>
+          {url ? <a href={url} target='_blank'>{title}</a> : title}
+        </h4></Row>
         <Row>{description}</Row>
-        {url
-          ? <Row>
-              <small>
-                <a href={url} target='_blank'>{url}</a>
-              </small>
-            </Row>
-          : false}
       </Col>
     </Row>
   </Box>

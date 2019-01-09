@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { browserHistory, BrowserRouter } from 'react-router-dom'
 import Favicon from 'react-favicon'
 import Konami from 'react-konami-code'
-
 import favicon from 'assets/images/favicon.ico'
 import App from 'routes'
 
@@ -21,9 +20,7 @@ ReactDOM.render(
   <BrowserRouter history={browserHistory}>
     <React.Fragment>
       <Favicon url={favicon}/>
-      <Konami action={konami.action} timeout={1000}>
-        {konami.image}
-      </Konami>
+      <Konami action={konami.action} />
       <App/>
     </React.Fragment>
   </BrowserRouter>,
