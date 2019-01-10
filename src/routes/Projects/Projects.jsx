@@ -37,7 +37,7 @@ const ProjectsRoute = () => wrapMain(
                   url: URLS.NPMTURNDOWN,
                 },
                 {
-                  description: 'Vlidate Access Keys from Brazil\'s Treasury Office.',
+                  description: 'Validate Access Keys from Brazil\'s Treasury Office.',
                   image: nfeImage,
                   title: 'br-validate-dfe-access-key',
                   url: URLS.NPMVALIDATEACCESSKEY,

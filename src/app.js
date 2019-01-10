@@ -20,7 +20,9 @@ ReactDOM.render(
   <BrowserRouter history={browserHistory}>
     <React.Fragment>
       <Favicon url={favicon}/>
-      <Konami action={konami.action} />
+      <Konami action={konami.action} timeout={konami.timeout}>
+        {konami.image}
+      </Konami>
       <App/>
     </React.Fragment>
   </BrowserRouter>,
