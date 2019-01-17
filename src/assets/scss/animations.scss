@@ -218,7 +218,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: $brandPrimary;
+  background: $primary;
   height: 4px;
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
@@ -236,7 +236,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: $brandPrimary;
+  background: $primary;
   height: 4px;
   -webkit-transform: translateY(4px);
   transform: translateY(0);
@@ -425,4 +425,38 @@
 @keyframes slide-in {
   0% { margin-bottom: -160px }
   50%, 100% { margin-bottom: 0 }
+}
+
+/* Card Flip */
+.flip-container {
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+}
+
+.flip-container:hover .flip, .flip-container.hover .flip {
+  transform: rotateY(180deg);
+}
+
+.flip {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
 }

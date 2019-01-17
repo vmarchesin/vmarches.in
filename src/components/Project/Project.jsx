@@ -1,13 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Col, Row } from 'reactstrap'
+import React from 'react';
+import styled from 'styled-components';
+import { Col, Row } from 'reactstrap';
 
-import { BoxedImage } from 'components/Image'
-
-import colors from 'scss/colors'
+import Image from 'components/Image';
+import colors from 'scss/colors';
 
 const Box = styled.div`
-  max-width: 400px;
+  max-width: 620px;
   padding: 10px;
 
   > div .logo {
@@ -23,14 +22,15 @@ const Box = styled.div`
     > div {
       padding: 5px 0;
 
-      > a {
+      > h4 > a {
+        color: ${colors.secondary};
         word-break: break-all;
       }
     }
   }
-`
+`;
 
-const Project = ({
+const Component = ({
   description,
   image,
   title,
@@ -38,17 +38,19 @@ const Project = ({
 }) => (
   <Box>
     <Row>
-      <Col className='logo' xs='12' md='4'>
-        <BoxedImage src={image} w='100px' h='100px'/>
+      <Col className="logo" xs="12" md="4">
+        <Image src={image} w="100px" h="100px" />
       </Col>
-      <Col className='align-left' xs='12' md='8'>
-        <Row><h4>
-          {url ? <a href={url} target='_blank'>{title}</a> : title}
-        </h4></Row>
+      <Col className="align-left" xs="12" md="8">
+        <Row>
+          <h4>
+            {url ? <a href={url} target="_blank" rel="noopener noreferrer">{title}</a> : title}
+          </h4>
+        </Row>
         <Row>{description}</Row>
       </Col>
     </Row>
   </Box>
-)
+);
 
-export default Project
+export default Component;

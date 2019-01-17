@@ -1,9 +1,8 @@
-import React from 'react'
-import cs from 'classnames'
-import styled from 'styled-components'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import React from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import colors from 'scss/colors'
+import colors from 'scss/colors';
 
 const Colored = styled.span`
   color: ${props => props.color}
@@ -14,7 +13,7 @@ const Colored = styled.span`
   &:hover {
     color: ${props => props.hoverColor};
   }
-`
+`;
 
 const Component = ({
   color = colors.icons,
@@ -37,6 +36,6 @@ const Component = ({
       spin={spin}
     />
   </Colored>
-)
+);
 
-export default Component
+export default Component;

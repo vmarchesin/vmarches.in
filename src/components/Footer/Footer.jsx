@@ -1,19 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Col, Row } from 'reactstrap'
+import React from 'react';
+import styled from 'styled-components';
+import { Col, Row } from 'reactstrap';
 
-import colors from 'scss/colors'
-import { URLS } from 'utils/constants'
+import colors from 'scss/colors';
 
 const Footer = styled.footer`
   background-color: ${colors.primary};
   color: white;
   min-height: 50px;
-`
+`;
 
 const Reverse = styled(Row)`
   flex-direction: row-reverse;
-`
+`;
 
 const Bottom = styled(Col)`
   display: flex;
@@ -25,20 +24,13 @@ const Bottom = styled(Col)`
   > span {
     padding: 10px;
   }
-`
-
-const Padded = styled(Col)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-`
+`;
 
 const Component = () => (
   <Footer>
     <div>
-      <Reverse className='justify-content-between'>
-        <Bottom xs='12' md='8'>
+      <Reverse className="justify-content-between">
+        <Bottom xs="12" md="8">
           <span>
             <div>
               <small>
@@ -55,6 +47,6 @@ const Component = () => (
       </Reverse>
     </div>
   </Footer>
-)
+);
 
-export default Component
+export default Component;

@@ -1,25 +1,27 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Col, Row } from 'reactstrap'
-import { Link } from 'react-router-dom'
-import cs from 'classnames'
+import React from 'react';
+import styled from 'styled-components';
+import { Row } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import cs from 'classnames';
+import { ifProp } from 'styled-tools';
 
-import { URLS } from 'utils/constants'
-import icons from 'tools/loaders/fontAwesome'
-import { createIcon } from 'components/FontAwesome'
+import { URLS } from 'utils/constants';
+import icons from 'tools/loaders/fontAwesome';
+import { createIcon } from 'components/FontAwesome';
 
-import colors from 'scss/colors'
+import colors from 'scss/colors';
 
 const Overlay = styled.div`
   height: 100%;
-  width: ${props => props.isOpen ? '100%' : '0%'};
+  width: ${ifProp('isOpen', '100%', '0%')};
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: ${colors.overlay};
+  background-color: ${colors.bgColor};
   overflow-x: hidden;
   transition: 0.5s;
+  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.5);
 
   > div {
     position: relative;
@@ -33,7 +35,7 @@ const Overlay = styled.div`
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
-    color: ${colors.icons};
+    color: ${colors.icons}!important;
     display: block;
     transition: 0.3s;
 
@@ -43,76 +45,82 @@ const Overlay = styled.div`
     font-size: 60px;
 
     &:hover, &:focus {
-      color: #fff;
+      outline: none;
+      > span {
+        color: ${colors.icons}!important;
+      }
     }
   }
-`
+`;
 
 const Section = styled(Row)`
-  &.animate {
-    animation: swoosh 2s ease-in both;
-    animation-delay: ${props => props.animationdelay}s;
-  }
-
   > a {
-    background-color: ${colors.primaryDark};
-    border: 2px solid ${colors.white};
-    border-radius: 10px;
-    color: ${colors.white};
+    border-radius: 40px;
+    background-color: ${colors.bgColor};
+    color: ${colors.secondary};
     font-size: 20px;
     margin-bottom: 4px;
-    padding: 20px;
+    padding: 20px 0;
     text-decoration: none;
     transition: 0.3s;
     white-space: nowrap;
 
     &:hover {
-      background-color: ${colors.primary};
+      background-color: ${colors.secondary};
+      color: ${colors.white}!important;
+      > span {
+        color: ${colors.white}!important;
+      }
     }
   }
 
   justify-content: center;
   margin-top: 5px;
-`
+`;
 
-const Menu = ({
+const Component = ({
   isOpen,
   onClose,
 }) => (
   <Overlay isOpen={isOpen}>
-    <span className='close' onClick={onClose}>
+    <span className="close" onClick={onClose}>
       {createIcon({ icon: icons.times, size: 'xs' })}
     </span>
-    <div className='container'>
+    <div className="container">
+      <hr />
       {[
         { icon: icons.home, name: 'home', path: '/' },
         { icon: icons.boxes, name: 'projects', path: '/projects' },
         { icon: icons.medium, name: 'blog', href: URLS.MEDIUM },
       ].map((section, i) => (
-        <Section animationdelay={(i + 1) / 10} className={cs({ animate: isOpen })} key={i}>
-          {(() => {
-            const content = (
-              <React.Fragment>
-                {createIcon({ color: colors.white, icon: section.icon, size: 'xs' })}
-                {` ${section.name}`}
-              </React.Fragment>
-            )
-            const props = { className: 'col-xs-12 col-md-8', onClick: onClose }
+        <React.Fragment key={i}>
+          <Section key={i}>
+            {(() => {
+              const content = (
+                <React.Fragment>
+                  {createIcon({ color: colors.secondary, icon: section.icon, size: 'xs' })}
+                  {` ${section.name}`}
+                </React.Fragment>
+              );
 
-            return section.href ? (
-              <a href={section.href} target='_blank' {...props}>
-                {content}
-              </a>
-            ) : (
-              <Link to={section.path} {...props}>
-                {content}
-              </Link>
-            )
-          })()}
-        </Section>
+              const props = { className: 'col-xs-12 col-md-8', onClick: onClose };
+
+              return section.href ? (
+                <a href={section.href} target="_blank" rel="noopener noreferrer" {...props}>
+                  {content}
+                </a>
+              ) : (
+                <Link to={section.path} {...props}>
+                  {content}
+                </Link>
+              );
+            })()}
+          </Section>
+          <hr />
+        </React.Fragment>
       ))}
     </div>
   </Overlay>
-)
+);
 
-export default Menu
+export default Component;

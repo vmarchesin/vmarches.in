@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import colors from 'scss/colors'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import colors from 'scss/colors';
 
 // Idea taken from https://codepen.io/kaypooma/pen/ehfjC
 const Oops = styled.div`
@@ -86,7 +86,7 @@ const Oops = styled.div`
   a {
     border: 2px solid ${colors.white};
     border-radius: 4px;
-    color: ${colors.white};
+    color: ${colors.white}!important;
     text-decoration: none;
 
     font-size: 15px;
@@ -100,19 +100,19 @@ const Oops = styled.div`
     left: 0;
     right: 0;
   }
-`
+`;
 
 const Error404 = () => {
-  const grawlixes = ['$#!%', 'F*#k']
-  const grawlix = grawlixes[Math.floor(Math.random() * grawlixes.length)]
+  const grawlixes = ['$#!%', 'F*#k'];
+  const grawlix = grawlixes[Math.floor(Math.random() * grawlixes.length)];
 
   return (
     <Oops>
-      <div className='error'>404</div>
-      <div className='info'>Looks like the page you are trying to access either ran away or doesn't exist.</div>
-      <Link className='hvr-hang' to='/'>{grawlix} go back</Link>
+      <div className="error">404</div>
+      <div className="info">{'Looks like the page you are trying to access ran away to pursue its dreams.'}</div>
+      <Link className="hvr-hang" to="/">{grawlix} go back</Link>
     </Oops>
-  )
-}
+  );
+};
 
-export default Error404
+export default Error404;

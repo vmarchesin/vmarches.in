@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Col, Row } from 'reactstrap'
-import cs from 'classnames'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import styled from 'styled-components';
+import { Row } from 'reactstrap';
+import cs from 'classnames';
+import { Link } from 'react-router-dom';
 
-import Overlay from './Overlay'
-import icons from 'tools/loaders/fontAwesome'
-import { URLS } from 'utils/constants'
-import { createIcon } from 'components/FontAwesome'
+import icons from 'tools/loaders/fontAwesome';
+import { URLS } from 'utils/constants';
+import { createIcon } from 'components/FontAwesome';
 
-import colors from 'scss/colors'
+import colors from 'scss/colors';
+import Overlay from './Overlay';
 
 const Nav = styled.nav`
   padding: 20px;
@@ -34,6 +34,8 @@ const Nav = styled.nav`
       text-decoration: none;
 
       &:hover {
+        color: inherit!important;
+
         > span svg path {
           fill: ${colors.primary};
           transition: .5s ease-in-out;
@@ -41,26 +43,30 @@ const Nav = styled.nav`
       }
     }
   }
-`
+`;
 
-class Navbar extends React.Component {
-  state = {
-    overlayIsOpen: false,
+class Component extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      overlayIsOpen: false,
+    };
   }
 
-  toggleOverlay = () => { this.setState({ overlayIsOpen: !this.state.overlayIsOpen }) }
+  toggleOverlay = () => { this.setState({ overlayIsOpen: !this.state.overlayIsOpen }); }
 
   render = () => {
-    const location = window.location.pathname
+    const location = window.location.pathname;
 
     return (
       <Nav>
-        <Overlay isOpen={this.state.overlayIsOpen} onClose={this.toggleOverlay}/>
+        <Overlay isOpen={this.state.overlayIsOpen} onClose={this.toggleOverlay} />
         <div>
-          <Row className='justify-content-start'>
+          <Row className="justify-content-start">
             <span
+              role="menu"
               className={cs({ hide: this.state.overlayIsOpen }, 'd-md-none')}
-              id='burger-menu'
+              id="burger-menu"
               onClick={this.toggleOverlay}
             >
               {createIcon({
@@ -68,7 +74,7 @@ class Navbar extends React.Component {
                 icon: icons.bars,
               })}
             </span>
-            <span className='d-none d-md-block' id='menu'>
+            <span className="d-none d-md-block" id="menu">
               {[
                 { name: 'home', path: '/' },
                 { name: 'projects', path: '/projects' },
@@ -77,23 +83,24 @@ class Navbar extends React.Component {
                   className={cs('hvr-underline-reveal', { 'underline-reveal': location === l.path })}
                   key={i}
                   to={l.path}
-                >{l.name}</Link>
+                >{l.name}
+                </Link>
               ))}
-                <a className='hvr-underline-reveal' href={URLS.MEDIUM}>
-                  blog
-                  {createIcon({
-                    hoverColor: colors.primary,
-                    color: colors.bgColor,
-                    size: '1x',
-                    icon: icons.chevronRight,
-                  })}
-                </a>
+              <a className="hvr-underline-reveal" href={URLS.MEDIUM}>
+                blog
+                {createIcon({
+                  hoverColor: colors.primary,
+                  color: colors.bgColor,
+                  size: '1x',
+                  icon: icons.chevronRight,
+                })}
+              </a>
             </span>
           </Row>
         </div>
       </Nav>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Component;

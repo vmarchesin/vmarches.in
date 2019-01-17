@@ -1,25 +1,24 @@
-import React from 'react'
-import { Col, Row } from 'reactstrap'
+import React from 'react';
+import { Col, Row } from 'reactstrap';
 
-import { RoundImage } from 'components/Image'
-import Project from 'components/Project'
+import Project from 'components/Project';
 
-import { URLS } from 'utils/constants'
-import { wrapMain } from 'utils'
+import { URLS } from 'utils/constants';
+import { wrapMain } from 'utils';
 
-import whatsappImage from 'assets/images/whatsapp.png'
-import konamiCodeImage from 'assets/images/konami-code.jpg'
-import turnDownForWhatImage from 'assets/images/turn-down-for-what.jpg'
-import nfeImage from 'assets/images/nfe-logo.png'
+import whatsappImage from 'assets/images/whatsapp.png';
+import konamiCodeImage from 'assets/images/konami-code.jpg';
+import turnDownForWhatImage from 'assets/images/turn-down-for-what.jpg';
+import nfeImage from 'assets/images/nfe-logo.png';
 // import npmImage from 'assets/images/npm.png'
 
 const ProjectsRoute = () => wrapMain(
   <div>
     <Row>
-      <Col xs='12'>
-        <center className='container'>
+      <Col xs="12">
+        <center className="container" style={{ marginBottom: 64 }}>
           <Row>
-            <Col xs='12'>
+            <Col xs="12">
               <h3>npm Packages</h3>
             </Col>
             <Col>
@@ -44,12 +43,12 @@ const ProjectsRoute = () => wrapMain(
                 },
               ].map((p, i) => <span key={i}><Project {...p} /></span>)}
             </Col>
-            <Col xs='12'>
+            <Col xs="12">
               <hr />
             </Col>
           </Row>
-          <Row className='mt10'>
-            <Col xs='12'>
+          <Row className="mt10">
+            <Col xs="12">
               <h3>Fun Projects</h3>
             </Col>
             <Col>
@@ -66,7 +65,7 @@ const ProjectsRoute = () => wrapMain(
         </center>
       </Col>
     </Row>
-  </div>
-)
+  </div>,
+);
 
-export default ProjectsRoute
+export default ProjectsRoute;

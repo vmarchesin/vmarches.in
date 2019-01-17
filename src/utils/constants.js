@@ -11,4 +11,4 @@ export const URLS = {
   REPO: 'https://github.com/vmarchesin/vmarches.in',
   TELEGRAM: 'https://telegram.me/vmarchesin',
   VEMDEZAP: 'http://vemdezapbe.be',
-}
+};

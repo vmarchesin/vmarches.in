@@ -1,2 +1,3 @@
-export RoundImage from './Round'
-export BoxedImage from './Boxed'
+import Image from './Image';
+
+export default Image;

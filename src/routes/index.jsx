@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import { hot } from 'react-hot-loader'
-import { Route, Switch } from 'react-router-dom'
+import React from 'react';
+import styled from 'styled-components';
+import { hot } from 'react-hot-loader'; /* eslint-disable-line */
+import { Route, Switch } from 'react-router-dom';
 
-import Home from 'routes/Home'
-import Projects from 'routes/Projects'
-import Error404 from 'routes/Error404'
+import Home from 'routes/Home';
+import Projects from 'routes/Projects';
+import Error404 from 'routes/Error404';
 
-import Footer from 'components/Footer'
-import GithubCorner from 'components/GithubCorner'
-import Header from 'components/Header'
+import Footer from 'components/Footer';
+import GithubCorner from 'components/GithubCorner';
+import Header from 'components/Header';
 
-import colors from 'scss/colors'
+import colors from 'scss/colors';
 // import { wrapMain } from 'utils'
 
 const Flex = styled.div`
@@ -21,26 +21,26 @@ const Flex = styled.div`
   min-height: 100vh;
   flex-direction: column;
 
-  > main {
-    flex: 1;
+  a {
+    color: ${colors.secondary};
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &:hover {
+      color: ${colors.secondaryDarker};
+    }
   }
-`
+`;
 
 const App = () => (
   <Flex>
     <Header />
     <GithubCorner />
     <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/projects' component={Projects} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/projects" component={Projects} />
       <Route component={Error404} />
     </Switch>
     <Footer />
   </Flex>
-)
+);
 
-export default hot(module)(App)
+export default hot(module)(App);

@@ -1,13 +1,17 @@
-$bgColor: #f2f2f2;
+$bgColor: #EEEEFF;
 $white: #fff;
 
-$brandPrimary: #003366;
-$brandPrimaryDark: darken($brandPrimary, 10%);
-$brandPrimaryDarker: darken($brandPrimaryDark, 5%);
+$primary: #003366;
+$primaryDark: darken($primary, 10%);
+$primaryDarker: darken($primaryDark, 5%);
+
+$secondary: #F95738;
+$secondaryDark: darken($secondary, 10%);
+$secondaryDarker: darken($secondaryDark, 5%);
 
 $icons: #757575;
 
-$overlay: transparentize($brandPrimaryDarker, 0.1);
+$overlay: transparentize($primaryDarker, 0.1);
 
 $facebook: #3b5998;
 $github: #212529;
@@ -19,9 +23,13 @@ $whatsapp: #25d366;
 :export {
   bgColor: $bgColor;
   white: $white;
-  primary: $brandPrimary;
-  primaryDark: $brandPrimaryDark;
-  primaryDarker: $brandPrimaryDarker;
+  primary: $primary;
+  primaryDark: $primaryDark;
+  primaryDarker: $primaryDarker;
+
+  secondary: $secondary;
+  secondaryDark: $secondaryDark;
+  secondaryDarker: $secondaryDarker;
 
   icons: $icons;
 
