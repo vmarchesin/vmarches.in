@@ -30,17 +30,32 @@ const Flex = styled.div`
   }
 `;
 
-const App = () => (
-  <Flex>
-    <Header />
-    <GithubCorner />
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/projects" component={Projects} />
-      <Route component={Error404} />
-    </Switch>
-    <Footer />
-  </Flex>
-);
+class App extends React.Component {
+  componentDidMount() {
+    const consoleStyle = [
+      `color: ${colors.secondary};`,
+      'font-size: x-large;',
+      'font-weight: 900;',
+      '\'HK Nova Medium Narrow\', \'Roboto\', sans-serif',
+    ].join(' ');
+
+    console.log("%cHi there. I hope you're having a great day.", consoleStyle);
+  }
+
+  render() {
+    return (
+      <Flex>
+        <Header />
+        <GithubCorner />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/projects" component={Projects} />
+          <Route component={Error404} />
+        </Switch>
+        <Footer />
+      </Flex>
+    );
+  }
+}
 
 export default hot(module)(App);
