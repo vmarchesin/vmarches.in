@@ -3,6 +3,7 @@ import faBars from '@fortawesome/fontawesome-free-solid/faBars';
 import faBoxes from '@fortawesome/fontawesome-free-solid/faBoxes';
 import faChevronCircleRight from '@fortawesome/fontawesome-free-solid/faChevronCircleRight';
 import faHome from '@fortawesome/fontawesome-free-solid/faHome';
+import faInfo from '@fortawesome/fontawesome-free-solid/faInfoCircle';
 import faTimes from '@fortawesome/fontawesome-free-solid/faTimes';
 
 
@@ -20,6 +21,7 @@ const icons = {
   boxes: faBoxes,
   chevronRight: faChevronCircleRight,
   home: faHome,
+  info: faInfo,
   times: faTimes,
   // brands
   facebook: faFacebookF,

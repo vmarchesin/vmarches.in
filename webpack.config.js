@@ -1,9 +1,9 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const path = require('path');
 
 module.exports = {
   entry: [
@@ -25,24 +25,24 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader'
+          use: 'css-loader',
         }),
         // use: [ 'style-loader', 'css-loader' ],
       },
       {
         test: /\.scss$/,
-        use: [ 'style-loader', 'css-loader', 'sass-loader' ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
         include: [
-          path.resolve(__dirname, 'src/assets')
+          path.resolve(__dirname, 'src/assets'),
         ],
-        use: [ 'file-loader' ],
+        use: ['file-loader'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [ 'file-loader' ],
+        use: ['file-loader'],
       },
       {
         test: /\.mp3$/,
@@ -81,4 +81,4 @@ module.exports = {
     }),
     // new BundleAnalyzerPlugin(),
   ],
-}
+};

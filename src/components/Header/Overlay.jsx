@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import cs from 'classnames';
 import { ifProp } from 'styled-tools';
 
 import { URLS } from 'utils/constants';
@@ -91,6 +90,7 @@ const Component = ({
       {[
         { icon: icons.home, name: 'home', path: '/' },
         { icon: icons.boxes, name: 'projects', path: '/projects' },
+        { icon: icons.info, name: 'about', path: '/about' },
         { icon: icons.medium, name: 'blog', href: URLS.MEDIUM },
       ].map((section, i) => (
         <React.Fragment key={i}>

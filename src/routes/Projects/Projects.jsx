@@ -11,12 +11,17 @@ import konamiCodeImage from 'assets/images/konami-code.jpg';
 import turnDownForWhatImage from 'assets/images/turn-down-for-what.jpg';
 import nfeImage from 'assets/images/nfe-logo.png';
 // import npmImage from 'assets/images/npm.png'
+import styled from 'styled-components';
+
+const Center = styled.div`
+  text-align: center;
+`;
 
 const ProjectsRoute = () => wrapMain(
   <div>
     <Row>
       <Col xs="12">
-        <center className="container" style={{ marginBottom: 64 }}>
+        <Center className="container" style={{ marginBottom: 64 }}>
           <Row>
             <Col xs="12">
               <h3>npm Packages</h3>
@@ -62,7 +67,7 @@ const ProjectsRoute = () => wrapMain(
               ].map((p, i) => <span key={i}><Project {...p} /></span>)}
             </Col>
           </Row>
-        </center>
+        </Center>
       </Col>
     </Row>
   </div>,

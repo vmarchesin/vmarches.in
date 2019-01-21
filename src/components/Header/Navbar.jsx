@@ -78,6 +78,7 @@ class Component extends React.Component {
               {[
                 { name: 'home', path: '/' },
                 { name: 'projects', path: '/projects' },
+                { name: 'about', path: '/about' },
               ].map((l, i) => (
                 <Link
                   className={cs('hvr-underline-reveal', { 'underline-reveal': location === l.path })}

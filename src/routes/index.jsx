@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { hot } from 'react-hot-loader'; /* eslint-disable-line */
 import { Route, Switch } from 'react-router-dom';
 
+import About from 'routes/About';
 import Home from 'routes/Home';
 import Projects from 'routes/Projects';
 import Error404 from 'routes/Error404';
@@ -34,12 +35,12 @@ class App extends React.Component {
   componentDidMount() {
     const consoleStyle = [
       `color: ${colors.secondary};`,
-      'font-size: x-large;',
+      'font-size: x-medium;',
       'font-weight: 900;',
       '\'HK Nova Medium Narrow\', \'Roboto\', sans-serif',
     ].join(' ');
 
-    console.log("%cHi there. I hope you're having a great day.", consoleStyle);
+    console.log('%cHi there. You can buy me a coffee if you like my stuff :) https://www.buymeacoffee.com/vmarchesin', consoleStyle);
   }
 
   render() {
@@ -50,6 +51,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/projects" component={Projects} />
+          <Route exact path="/about" component={About} />
           <Route component={Error404} />
         </Switch>
         <Footer />

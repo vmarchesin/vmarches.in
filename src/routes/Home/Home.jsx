@@ -11,28 +11,34 @@ import { createIcon } from 'components/FontAwesome';
 import Flip from 'components/Flip';
 import { wrapAnchor, wrapMain } from 'utils';
 
+import styled from 'styled-components';
+
 import profileImage from 'assets/images/profile.png';
 import logo from 'assets/images/logo_256.png';
+
+const Center = styled.div`
+  text-align: center;
+  margin: auto;
+`;
 
 const HomeRoute = () => wrapMain(
   <div style={{ width: '100%' }}>
     <Row>
       <Col xs="12">
-        <center>
-          <Row>
-            <Col xs="12">
-              <Flip
-                height="200px"
-                width="200px"
-                front={<Image src={logo} w="200px" h="200px" circle shadow />}
-                back={<Image src={profileImage} w="200px" h="200px" circle shadow />}
-              />
-            </Col>
-          </Row>
-        </center>
+        <Row>
+          <Col xs="12">
+            <Flip
+              style={{ margin: 'auto' }}
+              height="200px"
+              width="200px"
+              front={<Image src={logo} w="200px" h="200px" circle shadow />}
+              back={<Image src={profileImage} w="200px" h="200px" circle shadow />}
+            />
+          </Col>
+        </Row>
       </Col>
       <Col xs="12" className="mt10">
-        <center>
+        <Center>
           <Typist
             cursor={{ element: '_' }}
             startDelay={1000}
@@ -42,12 +48,12 @@ const HomeRoute = () => wrapMain(
             <Typist.Delay ms={1000} />
             {'oper '}<a href={URLS.ARQUIVEI} target="_blank" rel="noopener noreferrer">@Arquivei</a>
           </Typist>
-        </center>
+        </Center>
       </Col>
     </Row>
     <Row className="mt10">
       <Col xs="12">
-        <center>
+        <Center>
           {[
             {
               customClass: 'hvr-buzz-out', icon: icons.github, hoverColor: colors.github, href: URLS.GITHUB,
@@ -59,13 +65,10 @@ const HomeRoute = () => wrapMain(
               customClass: 'hvr-buzz-out', icon: icons.at, hoverColor: colors.github, href: URLS.MAIL,
             },
             {
-              customClass: 'hvr-buzz-out', icon: icons.facebook, hoverColor: colors.facebook, href: URLS.FACEBOOK,
-            },
-            {
               customClass: 'hvr-buzz-out', icon: icons.telegram, hoverColor: colors.telegram, href: URLS.TELEGRAM,
             },
           ].map((i, index) => wrapAnchor(i.href, createIcon(i), index))}
-        </center>
+        </Center>
       </Col>
     </Row>
   </div>,
