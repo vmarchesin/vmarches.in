@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { LocalizeProvider } from 'react-localize-redux';
 import Favicon from 'react-favicon';
 import Konami from 'react-konami-code';
 import favicon from 'assets/images/favicon.ico';
@@ -18,13 +19,15 @@ import konami from 'tools/loaders/konami';
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.Fragment>
-      <Favicon url={favicon} />
-      <Konami action={konami.action} timeout={konami.timeout}>
-        {konami.image}
-      </Konami>
-      <App />
-    </React.Fragment>
+    <LocalizeProvider>
+      <React.Fragment>
+        <Favicon url={favicon} />
+        <Konami action={konami.action} timeout={konami.timeout}>
+          {konami.image}
+        </Konami>
+        <App />
+      </React.Fragment>
+    </LocalizeProvider>
   </BrowserRouter>,
   document.getElementById('app'),
 );

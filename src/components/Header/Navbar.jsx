@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { Row } from 'reactstrap';
 import cs from 'classnames';
 import { Link } from 'react-router-dom';
+import { Translate } from 'react-localize-redux';
 
 import icons from 'tools/loaders/fontAwesome';
 import { URLS } from 'utils/constants';
 import { createIcon } from 'components/FontAwesome';
+import FlagSelector from 'components/Localization';
 
 import colors from 'scss/colors';
 import Overlay from './Overlay';
@@ -45,7 +47,7 @@ const Nav = styled.nav`
   }
 `;
 
-export default () => {
+const Navbar = () => {
   const [overlayIsOpen, setOverlay] = useState(false);
   const toggleOverlay = () => setOverlay(!overlayIsOpen);
   const location = window.location.pathname;
@@ -68,9 +70,9 @@ export default () => {
           </span>
           <span className="d-none d-md-block" id="menu">
             {[
-              { name: 'home', path: '/' },
-              { name: 'projects', path: '/projects' },
-              { name: 'about', path: '/about' },
+              { name: <Translate id="nav.home" />, path: '/' },
+              { name: <Translate id="nav.projects" />, path: '/projects' },
+              { name: <Translate id="nav.about" />, path: '/about' },
             ].map((l, i) => (
               <Link
                 className={cs('hvr-underline-reveal', { 'underline-reveal': location === l.path })}
@@ -88,9 +90,12 @@ export default () => {
                 icon: icons.chevronRight,
               })}
             </a>
+            <FlagSelector />
           </span>
         </Row>
       </div>
     </Nav>
   );
 };
+
+export default Navbar;

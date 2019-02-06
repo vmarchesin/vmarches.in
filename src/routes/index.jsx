@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { hot } from 'react-hot-loader'; /* eslint-disable-line */
 import { Route, Switch } from 'react-router-dom';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { withLocalize } from 'react-localize-redux';
 
 import About from 'routes/About';
 import Home from 'routes/Home';
@@ -13,7 +15,9 @@ import GithubCorner from 'components/GithubCorner';
 import Header from 'components/Header';
 
 import colors from 'scss/colors';
-// import { wrapMain } from 'utils'
+
+import globalTranslations from '../translations/index.json';
+import languages from '../translations/languages';
 
 const Flex = styled.div`
   background-color: ${colors.bgColor};
@@ -32,6 +36,18 @@ const Flex = styled.div`
 `;
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const defaultLanguage = localStorage.getItem('languageCode') || languages[0].code;
+
+    this.props.initialize({
+      languages,
+      translation: globalTranslations,
+      options: { defaultLanguage, renderToStaticMarkup },
+    });
+  }
+
   componentDidMount() {
     const consoleStyle = [
       `color: ${colors.secondary};`,
@@ -41,6 +57,19 @@ class App extends React.Component {
     ].join(' ');
 
     console.log('%cHi there. You can buy me a coffee if you like my stuff :) https://www.buymeacoffee.com/vmarchesin', consoleStyle);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.activeLanguage) {
+      return;
+    }
+
+    const currLangCode = this.props.activeLanguage.code;
+    const hasLanguageChanged = prevProps.activeLanguage.code !== currLangCode;
+
+    if (hasLanguageChanged) {
+      localStorage.setItem('languageCode', currLangCode);
+    }
   }
 
   render() {
@@ -60,4 +89,4 @@ class App extends React.Component {
   }
 }
 
-export default hot(module)(App);
+export default hot(module)(withLocalize(App));

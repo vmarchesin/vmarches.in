@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import React from 'react';
 
 export const wrapAnchor = (href, children, key) => (
@@ -5,5 +6,3 @@ export const wrapAnchor = (href, children, key) => (
     {children}
   </a>
 );
-
-export const wrapMain = children => <main>{children}</main>;

@@ -1,0 +1,113 @@
+{
+  "404": {
+    "info": [
+      "Looks like the page you are trying to access doesn't exist.",
+      "Parece que a página que você está tentando acessar não existe.",
+      "czech"
+    ],
+    "button": [
+      ", go back",
+      ", foi mal",
+      "czech"
+    ],
+    "grawlix0": [
+      "$#!%",
+      "M€rd@",
+      "czech"
+    ],
+    "grawlix1": [
+      "F*#k",
+      "Ops",
+      "czech"
+    ]
+  },
+  "about": {
+    "me": {
+      "paragraph": {
+        "1": [
+          "My name is Vinicius Marchesin Araujo. I'm a ${age}-year-old developer from Brazil that likes to make fun stuff for the web. I graduated from ${usp} in 2018 with a Bachelor in Computer Science. I am currently working at ${arquivei}, a brazilian startup that handles eletronic invoices and enables companies to transform bureaucracy into opportunities. I live in São Carlos, a city in the state of São Paulo, Brazil.",
+          "Meu nome é Vinicius Marchesin Araujo. Tenho ${age} anos e sou um desenvolvedor do Brasil que gosta de fazer coisas legais na internet. Sou Bacharel em Ciências da Computação pela ${usp} desde 2018. Trabalho na ${arquivei}, uma startup que cuida de documentos fiscais eletrônicos e ajuda empresas a transformar burocracia em oportunidade. Atualmente moro em São Carlos/SP.",
+          "czech"
+        ],
+        "2": [
+          "You can see my open source contributions at ${github} and my career achievements in my ${linkedin} profile. You can also check my working stack at ${stackshare}. I like to write about code and tech in general, so make sure to read one of my blog posts at ${medium}.",
+          "Você pode conferir minhas contribuições open source no meu ${github} e saber mais sobre minha carreira no ${linkedin}. Se quiser saber as tecnologias que uso no dia a dia dê uma olhada no meu ${stackshare}. Também gosto de escrever sobre código e tecnologia em geral, então aproveite e dê uma lida em um dos meus artigos no ${medium}.",
+          "czech"
+        ]
+      }
+    },
+    "website": {
+      "title": [
+        "About this website",
+        "Sobre este site",
+        "czech"
+      ],
+      "paragraph": {
+        "1": [
+          "This website is built using React and Webpack. It's hosted on ${netlify}, an awesome static (and beyond) hosting service that enables continuous integration out of the box for free. You can check the source code at its Github ${repo}.",
+          "Este site foi feito usando React e Webpack e está hospedado no ${netlify}, um serviço de hospedagem de sites estáticos (e mais!) com ferramentas de integração contínua habilitadas por padrão gratuitamente. Você pode conferir o código no ${repo} do Github.",
+          "czech"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "sections": {
+      "npm": [
+        "npm Packages",
+        "Pacotes npm",
+        "czech"
+      ],
+      "fun": [
+        "Fun Projects",
+        "Projetos Divertidos",
+        "czech"
+      ]
+    },
+    "react-konami-code": {
+      "description": [
+        "Trigger an easter egg by pressing a sequence of keys.",
+        "Execute uma ação secreta ao pressionar uma sequência de teclas.",
+        "czech"
+      ]
+    },
+    "turn-down-for-what": {
+      "description": [
+        "Fire up that loud, Another round of shots.",
+        "Fire up that loud, Another round of shots.",
+        "Fire up that loud, Another round of shots."
+      ]
+    },
+    "br-validate-dfe-access-key": {
+      "description": [
+        "Validate Access Keys from Brazil's Treasury Office.",
+        "Valide chaves de acesso de documentos fiscais eletrônicos emitidos pela SEFAZ.",
+        "czech"
+      ]
+    },
+    "vem-de-zap-bebe": {
+      "description": [
+        "A tool to add emojis to any text, based on context.",
+        "Transforme sua mensagem num zapzap de tiozão.",
+        "czech"
+      ]
+    }
+  },
+  "nav": {
+    "home": [
+      "home",
+      "início",
+      "czech"
+    ],
+    "projects": [
+      "projects",
+      "projetos",
+      "czech"
+    ],
+    "about": [
+      "about",
+      "sobre",
+      "czech"
+    ]
+  }
+}

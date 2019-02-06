@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { ifProp } from 'styled-tools';
+import { Translate } from 'react-localize-redux';
 
 import { URLS } from 'utils/constants';
 import icons from 'tools/loaders/fontAwesome';
 import { createIcon } from 'components/FontAwesome';
+import FlagSelector from 'components/Localization';
 
 import colors from 'scss/colors';
 
@@ -86,11 +88,12 @@ const Component = ({
       {createIcon({ icon: icons.times, size: 'xs' })}
     </span>
     <div className="container">
+      <FlagSelector w="48px" h="48px" />
       <hr />
       {[
-        { icon: icons.home, name: 'home', path: '/' },
-        { icon: icons.boxes, name: 'projects', path: '/projects' },
-        { icon: icons.info, name: 'about', path: '/about' },
+        { icon: icons.home, name: <Translate id="nav.home" />, path: '/' },
+        { icon: icons.boxes, name: <Translate id="nav.projects" />, path: '/projects' },
+        { icon: icons.info, name: <Translate id="nav.about" />, path: '/about' },
         { icon: icons.medium, name: 'blog', href: URLS.MEDIUM },
       ].map((section, i) => (
         <React.Fragment key={i}>
@@ -99,7 +102,8 @@ const Component = ({
               const content = (
                 <React.Fragment>
                   {createIcon({ color: colors.secondary, icon: section.icon, size: 'xs' })}
-                  {` ${section.name}`}
+                  {' '}
+                  {section.name}
                 </React.Fragment>
               );
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Translate } from 'react-localize-redux';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import colors from 'scss/colors';
@@ -102,17 +103,15 @@ const Oops = styled.div`
   }
 `;
 
-const Error404 = () => {
-  const grawlixes = ['$#!%', 'F*#k'];
-  const grawlix = grawlixes[Math.floor(Math.random() * grawlixes.length)];
-
-  return (
-    <Oops>
-      <div className="error">404</div>
-      <div className="info">{'Looks like the page you are trying to access ran away to pursue its dreams.'}</div>
-      <Link className="hvr-hang" to="/">{grawlix} go back</Link>
-    </Oops>
-  );
-};
+const Error404 = () => (
+  <Oops>
+    <div className="error">404</div>
+    <div className="info"><Translate id="404.info" /></div>
+    <Link className="hvr-hang" to="/">
+      <Translate id={`404.grawlix${~~(Math.random() * 2)}`} />
+      <Translate id="404.button" />
+    </Link>
+  </Oops>
+);
 
 export default Error404;
