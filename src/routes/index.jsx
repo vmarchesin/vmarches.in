@@ -37,7 +37,7 @@ class App extends React.Component {
       `color: ${colors.secondary};`,
       'font-size: x-medium;',
       'font-weight: 900;',
-      '\'HK Nova Medium Narrow\', \'Roboto\', sans-serif',
+      "'HK Nova Medium Narrow', 'Roboto', sans-serif",
     ].join(' ');
 
     console.log('%cHi there. You can buy me a coffee if you like my stuff :) https://www.buymeacoffee.com/vmarchesin', consoleStyle);

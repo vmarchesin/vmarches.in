@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Row } from 'reactstrap';
 import cs from 'classnames';
@@ -45,63 +45,52 @@ const Nav = styled.nav`
   }
 `;
 
-class Component extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      overlayIsOpen: false,
-    };
-  }
+export default () => {
+  const [overlayIsOpen, setOverlay] = useState(false);
+  const toggleOverlay = () => setOverlay(!overlayIsOpen);
+  const location = window.location.pathname;
 
-  toggleOverlay = () => { this.setState({ overlayIsOpen: !this.state.overlayIsOpen }); }
-
-  render = () => {
-    const location = window.location.pathname;
-
-    return (
-      <Nav>
-        <Overlay isOpen={this.state.overlayIsOpen} onClose={this.toggleOverlay} />
-        <div>
-          <Row className="justify-content-start">
-            <span
-              role="menu"
-              className={cs({ hide: this.state.overlayIsOpen }, 'd-md-none')}
-              id="burger-menu"
-              onClick={this.toggleOverlay}
-            >
+  return (
+    <Nav>
+      <Overlay isOpen={overlayIsOpen} onClose={toggleOverlay} />
+      <div>
+        <Row className="justify-content-start">
+          <span
+            role="menu"
+            className={cs({ hide: overlayIsOpen }, 'd-md-none')}
+            id="burger-menu"
+            onClick={toggleOverlay}
+          >
+            {createIcon({
+              hoverColor: colors.primary,
+              icon: icons.bars,
+            })}
+          </span>
+          <span className="d-none d-md-block" id="menu">
+            {[
+              { name: 'home', path: '/' },
+              { name: 'projects', path: '/projects' },
+              { name: 'about', path: '/about' },
+            ].map((l, i) => (
+              <Link
+                className={cs('hvr-underline-reveal', { 'underline-reveal': location === l.path })}
+                key={i}
+                to={l.path}
+              >{l.name}
+              </Link>
+            ))}
+            <a className="hvr-underline-reveal" href={URLS.MEDIUM}>
+              blog
               {createIcon({
                 hoverColor: colors.primary,
-                icon: icons.bars,
+                color: colors.bgColor,
+                size: '1x',
+                icon: icons.chevronRight,
               })}
-            </span>
-            <span className="d-none d-md-block" id="menu">
-              {[
-                { name: 'home', path: '/' },
-                { name: 'projects', path: '/projects' },
-                { name: 'about', path: '/about' },
-              ].map((l, i) => (
-                <Link
-                  className={cs('hvr-underline-reveal', { 'underline-reveal': location === l.path })}
-                  key={i}
-                  to={l.path}
-                >{l.name}
-                </Link>
-              ))}
-              <a className="hvr-underline-reveal" href={URLS.MEDIUM}>
-                blog
-                {createIcon({
-                  hoverColor: colors.primary,
-                  color: colors.bgColor,
-                  size: '1x',
-                  icon: icons.chevronRight,
-                })}
-              </a>
-            </span>
-          </Row>
-        </div>
-      </Nav>
-    );
-  }
-}
-
-export default Component;
+            </a>
+          </span>
+        </Row>
+      </div>
+    </Nav>
+  );
+};
