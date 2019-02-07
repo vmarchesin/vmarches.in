@@ -4,6 +4,7 @@ import { Row } from 'reactstrap';
 import cs from 'classnames';
 import { Link } from 'react-router-dom';
 import { Translate } from 'react-localize-redux';
+import Hammer from 'hammerjs';
 
 import icons from 'tools/loaders/fontAwesome';
 import { URLS } from 'utils/constants';
@@ -47,10 +48,47 @@ const Nav = styled.nav`
   }
 `;
 
+const handleSwipe = (setOverlay) => {
+  const isMobile = window && window.screen.width <= 768;
+
+  if (!isMobile) {
+    return;
+  }
+
+  const manager = new Hammer.Manager(document.querySelector('body'));
+  const Swipe = new Hammer.Swipe();
+  manager.add(Swipe);
+
+  const getStartPosition = (e) => {
+    const deltaX = e.deltaX;
+    const deltaY = e.deltaY;
+    const finalX = e.srcEvent.pageX || e.srcEvent.screenX || 0;
+    const finalY = e.srcEvent.pageY || e.srcEvent.screenY || 0;
+
+    return {
+      x: finalX - deltaX,
+      y: finalY - deltaY,
+      deltaY,
+    };
+  };
+
+  const handleEdgeSwipe = (e) => {
+    const { x, deltaY } = getStartPosition(e);
+
+    if (x >= 0 && x <= 50 && deltaY < 100) { // swipe from left edge
+      setOverlay(true);
+    }
+  };
+
+  manager.on('swipe', e => handleEdgeSwipe(e));
+};
+
 const Navbar = () => {
   const [overlayIsOpen, setOverlay] = useState(false);
   const toggleOverlay = () => setOverlay(!overlayIsOpen);
   const location = window.location.pathname;
+
+  handleSwipe(setOverlay);
 
   return (
     <Nav>
