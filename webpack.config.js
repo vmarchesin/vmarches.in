@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 module.exports = {
@@ -27,7 +26,6 @@ module.exports = {
           fallback: 'style-loader',
           use: 'css-loader',
         }),
-        // use: [ 'style-loader', 'css-loader' ],
       },
       {
         test: /\.scss$/,
@@ -79,6 +77,6 @@ module.exports = {
       minRatio: 1,
       test: /\.js(\?.*)?$/i,
     }),
-    // new BundleAnalyzerPlugin(),
+    // new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)(),
   ],
 };
