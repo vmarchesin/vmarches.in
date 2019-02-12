@@ -101,13 +101,19 @@ const Oops = styled.div`
     left: 0;
     right: 0;
   }
+
+  .vibrate {
+    &:hover {
+      animation: vibrate 0.2s linear infinite;
+    }
+  }
 `;
 
 const Error404 = () => (
   <Oops>
     <div className="error">404</div>
     <div className="info"><Translate id="404.info" /></div>
-    <Link className="hvr-hang" to="/">
+    <Link className="vibrate" to="/">
       <Translate id={`404.grawlix${~~(Math.random() * 2)}`} />
       <Translate id="404.button" />
     </Link>
