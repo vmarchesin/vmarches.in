@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { ifProp } from 'styled-tools';
 import { Translate } from 'react-localize-redux';
 
-import { URLS } from 'utils/constants';
+import URLS from 'utils/urls';
 import icons from 'tools/loaders/fontAwesome';
 import { createIcon } from 'components/FontAwesome';
 import FlagSelector from 'components/Localization';

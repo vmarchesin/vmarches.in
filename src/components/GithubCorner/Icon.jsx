@@ -2,7 +2,7 @@
 import React from 'react';
 import colors from 'scss/colors';
 
-import { URLS } from 'utils/constants';
+import URLS from 'utils/urls';
 
 const Component = () => (
   <React.Fragment>

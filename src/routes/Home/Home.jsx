@@ -5,7 +5,7 @@ import Typist from 'react-typist';
 import Image from 'components/Image';
 
 import colors from 'scss/colors';
-import { URLS } from 'utils/constants';
+import URLS from 'utils/urls';
 import icons from 'tools/loaders/fontAwesome';
 import { createIcon } from 'components/FontAwesome';
 import Flip from 'components/Flip';

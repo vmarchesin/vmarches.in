@@ -4,12 +4,13 @@ import { Col, Row } from 'reactstrap';
 
 import Project from 'components/Project';
 
-import { URLS } from 'utils/constants';
+import URLS, { npmUrl } from 'utils/urls';
 
 import whatsappImage from 'assets/images/whatsapp.png';
 import konamiCodeImage from 'assets/images/konami-code.jpg';
 import turnDownForWhatImage from 'assets/images/turn-down-for-what.jpg';
 import nfeImage from 'assets/images/nfe-logo.png';
+import infinityGauntletImage from 'assets/images/infinity-gauntlet.jpg';
 // import npmImage from 'assets/images/npm.png'
 import styled from 'styled-components';
 
@@ -33,19 +34,25 @@ const ProjectsRoute = () => (
                     description: <Translate id="projects.react-konami-code.description" />,
                     image: konamiCodeImage,
                     title: 'react-konami-code',
-                    url: URLS.NPMKONAMI,
+                    url: npmUrl('react-konami-code'),
                   },
                   {
                     description: <Translate id="projects.turn-down-for-what.description" />,
                     image: turnDownForWhatImage,
                     title: 'turn-down-for-what',
-                    url: URLS.NPMTURNDOWN,
+                    url: npmUrl('turn-down-for-what'),
+                  },
+                  {
+                    description: <Translate id="projects.infinity-snap.description" />,
+                    image: infinityGauntletImage,
+                    title: 'infinity-snap',
+                    url: npmUrl('infinity-snap'),
                   },
                   {
                     description: <Translate id="projects.br-validate-dfe-access-key.description" />,
                     image: nfeImage,
                     title: 'br-validate-dfe-access-key',
-                    url: URLS.NPMVALIDATEACCESSKEY,
+                    url: npmUrl('br-validate-dfe-access-key'),
                   },
                 ].map((p, i) => <span key={i}><Project {...p} /></span>)}
               </Col>

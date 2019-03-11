@@ -2,7 +2,7 @@ import React from 'react';
 import { Translate } from 'react-localize-redux';
 import { Col, Row } from 'reactstrap';
 import { wrapAnchor } from 'utils';
-import { URLS } from 'utils/constants';
+import URLS from 'utils/urls';
 import styled from 'styled-components';
 import Image from 'components/Image';
 import profileImage from 'assets/images/profile.png';

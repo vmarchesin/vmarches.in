@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Translate } from 'react-localize-redux';
 
 import icons from 'tools/loaders/fontAwesome';
-import { URLS } from 'utils/constants';
+import URLS from 'utils/urls';
 import { createIcon } from 'components/FontAwesome';
 import FlagSelector from 'components/Localization';
 
@@ -83,12 +83,14 @@ const Navbar = () => {
             ))}
             <a className="hvr-underline-reveal" href={URLS.MEDIUM}>
               blog
-              {createIcon({
-                hoverColor: colors.primary,
-                color: colors.bgColor,
-                size: '1x',
-                icon: icons.chevronRight,
-              })}
+              <span className="chevron">
+                {createIcon({
+                  hoverColor: colors.primary,
+                  color: colors.bgColor,
+                  size: '1x',
+                  icon: icons.chevronRight,
+                })}
+              </span>
             </a>
             <FlagSelector />
           </span>
