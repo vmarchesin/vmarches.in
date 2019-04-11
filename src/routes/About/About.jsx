@@ -34,7 +34,7 @@ const AboutRoute = () => {
   const age = Math.floor((new Date() - new Date('1994-01-13')) * (1 / 31536000000));
 
   const urls = {
-    arquivei: wrapAnchor(URLS.ARQUIVEI, 'Arquivei', 'arquivei'),
+    socialbakers: wrapAnchor(URLS.SOCIALBAKERS, 'Socialbakers', 'socialbakers'),
     github: wrapAnchor(URLS.GITHUB, 'Github', 'github'),
     linkedin: wrapAnchor(URLS.LINKEDIN, 'LinkedIn', 'linkedin'),
     medium: wrapAnchor(URLS.MEDIUM, 'Medium', 'medium'),

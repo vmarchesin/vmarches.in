@@ -47,7 +47,7 @@ const HomeRoute = () => (
               Front-end Develpoer
               <Typist.Backspace count={4} delay={500} />
               <Typist.Delay ms={1000} />
-              {'oper '}<a href={URLS.ARQUIVEI} target="_blank" rel="noopener noreferrer">@Arquivei</a>
+              {'oper '}<a href={URLS.SOCIALBAKERS} target="_blank" rel="noopener noreferrer">@Socialbakers</a>
             </Typist>
           </Center>
         </Col>

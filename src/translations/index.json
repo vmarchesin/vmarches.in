@@ -25,8 +25,8 @@
     "me": {
       "paragraph": {
         "1": [
-          "My name is Vinicius Marchesin Araujo. I'm a ${age}-year-old developer from Brazil that likes to make fun stuff for the web. I graduated from ${usp} in 2018 with a Bachelor in Computer Science. I am currently working at ${arquivei}, a brazilian startup that handles eletronic invoices and enables companies to transform bureaucracy into opportunities. I live in São Carlos, a city in the state of São Paulo, Brazil.",
-          "Meu nome é Vinicius Marchesin Araujo. Tenho ${age} anos e sou um desenvolvedor do Brasil que gosta de fazer coisas legais na internet. Sou Bacharel em Ciências da Computação pela ${usp} desde 2018. Trabalho na ${arquivei}, uma startup que cuida de documentos fiscais eletrônicos e ajuda empresas a transformar burocracia em oportunidade. Atualmente moro em São Carlos/SP.",
+          "My name is Vinicius Marchesin Araujo. I'm a ${age}-year-old developer from Brazil that likes to make fun stuff for the web. I graduated from ${usp} in 2018 with a Bachelor in Computer Science. I am currently working at ${socialbakers}, an AI-Powered social media marketing suite. I currently live in Prague, Czech Republic.",
+          "Meu nome é Vinicius Marchesin Araujo. Tenho ${age} anos e sou um desenvolvedor do Brasil que gosta de fazer coisas legais na internet. Sou Bacharel em Ciências da Computação pela ${usp} desde 2018. Trabalho na ${socialbakers}, uma plataforma de marketing para mídias sociais baseada em Inteligência Artificial. Atualmente moro em Praga, República Tcheca.",
           "czech"
         ],
         "2": [

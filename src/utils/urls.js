@@ -2,6 +2,7 @@
 
 export default {
   ARQUIVEI: 'https://arquivei.com.br',
+  SOCIALBAKERS: 'https://socialbakers.com',
   FACEBOOK: 'https://www.facebook.com/viniciusmarchesin',
   GITHUB: 'https://github.com/vmarchesin',
   LINKEDIN: 'https://www.linkedin.com/in/vmarchesin/',
